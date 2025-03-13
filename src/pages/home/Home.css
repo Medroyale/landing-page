@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+    padding: 0 150px 0 150px;
+}
+.two-rows {
+    margin-bottom: 157px;
+}
+.chips {
+    width: fit-content;
+    padding: 15px 20px 15px 20px;
+    border-radius: 100px;
+    border: 1px solid #b6fb44;
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+}
+.chips:hover {
+    width: fit-content;
+    padding: 15px 20px 15px 20px;
+    border-radius: 100px;
+    background: #b6fb44;
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    transition: 5s;
+}
+.text-title {
+    font-size: 72px;
+
+    font-weight: medium;
+    font-family: "Urbanist";
+    margin-top: 30px;
+}
+.text-description {
+    color: #565656;
+    margin-top: 30px;
+    /* Desktop Styles/Sub-Tittle */
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+}
+.text-body {
+    margin-top: 30px;
+    font-family: Urbanist;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+.btn {
+    font-size: 22px;
+    font-family: "Urbanist";
+}
+
+.list-features {
+    margin-top: 15px;
+}
+.img-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.text-feature {
+    font-family: "Urbanist";
+    margin-top: -10px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
