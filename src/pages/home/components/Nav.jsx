@@ -6,17 +6,23 @@ const CustomNavbar = () => {
   return (
     <Navbar expand="lg" className="border-bottom">
       <Container>
-        <Navbar.Brand href="#" className="fw-bold">
+        <Navbar.Brand href="#" className="navbar-brand">
           Medroyale
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#">Feature</Nav.Link>
-            <Nav.Link href="#">Pricing</Nav.Link>
-            <Nav.Link href="#">Contact Us</Nav.Link>
+            <Nav.Link href="#" className="nav-text">
+              Feature
+            </Nav.Link>
+            <Nav.Link href="#" className="nav-text">
+              Pricing
+            </Nav.Link>
+            <Nav.Link href="#" className="nav-text">
+              Contact Us
+            </Nav.Link>
           </Nav>
-          <Button variant="dark" size="sm" className="ms-3">
+          <Button variant="dark" size="sm" className="ms-3 nav-button">
             Downloads
           </Button>
         </Navbar.Collapse>
