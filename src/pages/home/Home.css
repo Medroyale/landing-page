@@ -2,6 +2,7 @@
 body {
     padding: 0 150px 0 150px;
 }
+
 .navbar-brand {
     color: #252525;
 
@@ -28,7 +29,10 @@ body {
     line-height: normal;
     padding: 10px 20px 10px 20px;
 }
-
+#features {
+    margin-top: 70px;
+    margin-bottom: 120px;
+}
 .two-rows {
     margin-bottom: 157px;
 }

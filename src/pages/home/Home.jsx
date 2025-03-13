@@ -8,6 +8,8 @@ import AppPreview4 from "../../assets/app_preview_3.svg";
 import TwoRowsWithImagesRight from "./components/TwoRowsWithImagesComponents";
 import TwoRowsWithImagesLeft from "./components/TwoRowsWithImageLeft";
 import CardComponent from "./components/Card";
+import CardComponentFeature from "./components/CardComponentsFeature";
+
 import { Col, Row } from "react-bootstrap";
 import Avatar from "../../assets/avatar.png";
 import Avatar1 from "../../assets/avatar1.png";
@@ -31,6 +33,38 @@ const Home = () => {
         buttonName={download}
         src={AppPreview}
       />
+      <section id="features">
+        <h1 className="text-title text-center">
+          Comprehensive features with automated processes
+        </h1>
+        <Row className="card-avatar">
+          <Col lg={4}>
+            <CardComponentFeature
+              img={Avatar}
+              isActive={true}
+              title="Attendance Tracking"
+              description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
+            />
+          </Col>
+          <Col lg={4}>
+            <CardComponentFeature
+              img={Avatar}
+              isActive={true}
+              title="Attendance Tracking"
+              description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
+            />
+          </Col>
+          <Col lg={4}>
+            <CardComponentFeature
+              img={Avatar}
+              isActive={true}
+              title="Attendance Tracking"
+              description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
+            />
+          </Col>
+        </Row>
+      </section>
+
       <TwoRowsWithImagesRight
         isShowChips={true}
         titleChips="AI Face Biometric"
