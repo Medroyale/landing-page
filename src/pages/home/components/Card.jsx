@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 const CardComponent = ({ img, alt }) => {
   return (
     <>
-      <Card>
+      <Card data-aos="fade-left">
         <h1 className="card-title">
           “I can’t say enough about Level. Thanks for the great service. We have
           no regrets!”

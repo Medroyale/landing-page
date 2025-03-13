@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const CustomNavbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <Navbar expand="lg" className="border-bottom">
+    <Navbar
+      expand="lg"
+      className={`custom-navbar ${scrolled ? "scrolled" : ""}`}
+    >
       <Container>
         <Navbar.Brand href="#" className="navbar-brand">
           Medroyale

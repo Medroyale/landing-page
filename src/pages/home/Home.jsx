@@ -5,6 +5,10 @@ import AppPreview2 from "../../assets/app_preview_2.svg";
 import AppPreview3 from "../../assets/app_preview_3.svg";
 import AppPreview4 from "../../assets/app_preview_3.svg";
 
+import Clock from "../../assets/Clock.svg";
+import Wallet from "../../assets/Wallet.svg";
+import Activity from "../../assets/Activity.svg";
+
 import TwoRowsWithImagesRight from "./components/TwoRowsWithImagesComponents";
 import TwoRowsWithImagesLeft from "./components/TwoRowsWithImageLeft";
 import CardComponent from "./components/Card";
@@ -34,13 +38,13 @@ const Home = () => {
         src={AppPreview}
       />
       <section id="features">
-        <h1 className="text-title text-center">
+        <h1 className="text-title text-center" data-aos="fade-right">
           Comprehensive features with automated processes
         </h1>
         <Row className="card-avatar">
           <Col lg={4}>
             <CardComponentFeature
-              img={Avatar}
+              img={Clock}
               isActive={true}
               title="Attendance Tracking"
               description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
@@ -48,16 +52,14 @@ const Home = () => {
           </Col>
           <Col lg={4}>
             <CardComponentFeature
-              img={Avatar}
-              isActive={true}
+              img={Activity}
               title="Attendance Tracking"
               description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
             />
           </Col>
           <Col lg={4}>
             <CardComponentFeature
-              img={Avatar}
-              isActive={true}
+              img={Wallet}
               title="Attendance Tracking"
               description="Multiply your sales efforts with intelligent automation. Close deals faster, and with greater precision."
             />
@@ -105,7 +107,7 @@ const Home = () => {
           "Payslip distribution",
         ]}
       />
-      <h1 className="text-title text-center">
+      <h1 className="text-title text-center" data-aos="fade-right">
         What people say about our platform
       </h1>
       <Row className="card-avatar">

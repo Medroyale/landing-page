@@ -160,3 +160,64 @@ footer ul li {
     font-weight: 400;
     line-height: 50px;
 }
+
+.active-card {
+    border-radius: 20px;
+    border: 0.5px solid #5f5f5f;
+
+    background: #99c2ff1a;
+}
+.active-card .card-title-feature {
+    color: #472db8;
+
+    /* Desktop Styles/Menu-Tittle */
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+}
+.active-card .card-description-feature {
+    color: #080c01;
+
+    /* Desktop Styles/Body */
+    font-family: Urbanist;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
+.card-title-feature {
+    /* Desktop Styles/Menu-Tittle */
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+}
+.card-description-feature {
+    /* Desktop Styles/Body */
+    font-family: Urbanist;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
+.img-card-feature {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+}
+.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    background-color: transparent; /* Default: Transparent */
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-navbar.scrolled {
+    background-color: white; /* Change to white after scrolling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
