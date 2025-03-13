@@ -75,3 +75,26 @@ body {
     font-weight: 400;
     line-height: 50px;
 }
+.card {
+    border-radius: 20px;
+    padding: 20px;
+}
+.card-title {
+    color: #000;
+
+    /* Desktop Styles/Body */
+    font-family: Urbanist;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    margin-top: 40px;
+}
+.img-card {
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+}
+.card-avatar {
+    margin-top: 60px;
+}

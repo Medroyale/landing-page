@@ -7,6 +7,12 @@ import AppPreview4 from "../../assets/app_preview_3.svg";
 
 import TwoRowsWithImagesRight from "./components/TwoRowsWithImagesComponents";
 import TwoRowsWithImagesLeft from "./components/TwoRowsWithImageLeft";
+import CardComponent from "./components/Card";
+import { Col, Row } from "react-bootstrap";
+import Avatar from "../../assets/avatar.png";
+import Avatar1 from "../../assets/avatar1.png";
+import Avatar2 from "../../assets/avatar2.png";
+
 const Home = () => {
   const title = "Best Apps Human Resource by Medroyale";
   const description =
@@ -22,7 +28,6 @@ const Home = () => {
         buttonName={download}
         src={AppPreview}
       />
-
       <TwoRowsWithImagesRight
         isShowChips={true}
         titleChips="AI Face Biometric"
@@ -63,6 +68,20 @@ const Home = () => {
           "Payslip distribution",
         ]}
       />
+      <h1 className="text-title text-center">
+        What people say about our platform
+      </h1>
+      <Row className="card-avatar">
+        <Col lg={4}>
+          <CardComponent img={Avatar} />
+        </Col>
+        <Col lg={4}>
+          <CardComponent img={Avatar1} />
+        </Col>
+        <Col lg={4}>
+          <CardComponent img={Avatar2} />
+        </Col>
+      </Row>
     </>
   );
 };
