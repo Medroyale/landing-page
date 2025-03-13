@@ -12,6 +12,8 @@ import { Col, Row } from "react-bootstrap";
 import Avatar from "../../assets/avatar.png";
 import Avatar1 from "../../assets/avatar1.png";
 import Avatar2 from "../../assets/avatar2.png";
+import CustomNavbar from "./components/Nav";
+import Footer from "./components/Footer";
 
 const Home = () => {
   const title = "Best Apps Human Resource by Medroyale";
@@ -20,6 +22,7 @@ const Home = () => {
   const download = "Downloads";
   return (
     <>
+      <CustomNavbar />
       <TwoRowsWithImagesRight
         title={title}
         description={description}
@@ -82,6 +85,7 @@ const Home = () => {
           <CardComponent img={Avatar2} />
         </Col>
       </Row>
+      <Footer />
     </>
   );
 };

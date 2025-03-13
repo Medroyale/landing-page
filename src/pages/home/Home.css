@@ -98,3 +98,34 @@ body {
 .card-avatar {
     margin-top: 60px;
 }
+footer {
+    margin-top: 60px;
+}
+.footer h3 {
+    color: #000;
+
+    /* Desktop Styles/Heading 1 */
+    font-family: Urbanist;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+footer h6 {
+    margin-top: 50px;
+    color: #000;
+
+    /* Desktop Styles/Menu-Tittle */
+    font-family: Urbanist;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+}
+footer ul li {
+    font-family: Urbanist;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+}
