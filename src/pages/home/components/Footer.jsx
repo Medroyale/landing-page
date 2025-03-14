@@ -4,17 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
-    <footer className="border-bottom mb-5">
+    <footer className="border-bottom">
       <Container>
         <Row>
-          <Col md={6}>
+          <Col lg={6}>
             <h3 className="text-title">Medroyale</h3>
             <p className="text-body">
               Sed ut perspiciatis undmnis iste natus error sit voluptatem
               accusantium dolore udantiyu totam.
             </p>
           </Col>
-          <Col md={6}>
+          <Col lg={6}>
             <Row>
               <Col>
                 <h6>Company</h6>

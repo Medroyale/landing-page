@@ -33,15 +33,15 @@ const TwoRowsWithImagesLeft = ({
         </Col>
         <Col lg={6}>
           {isShowChips && (
-            <h1 className="chips" data-aos="fade-left">
+            <h1 className="chips mt-3" data-aos="fade-left">
               {titleChips}
             </h1>
           )}
-          <h1 className="text-title" data-aos="fade-left">
+          <h1 className="text-title mt-3" data-aos="fade-left">
             {title}
           </h1>
           {isDescription && (
-            <p className="text-description" data-aos="fade-left">
+            <p className="text-description mt-5" data-aos="fade-left">
               {description}
             </p>
           )}

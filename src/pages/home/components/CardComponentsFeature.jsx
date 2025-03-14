@@ -10,7 +10,7 @@ const CardComponentFeature = ({
   return (
     <>
       <Card
-        className={isActive ? "active-card" : "card-components"}
+        className={isActive ? "active-card mt-3" : "card-components mt-3"}
         data-aos="fade-left"
       >
         <img src={img} alt={alt} className="img-card-feature" />

@@ -1,6 +1,10 @@
+/* Mobile */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-    padding: 0 150px 0 150px;
+    padding: 0 20px 0 20px;
+}
+.row {
+    width: 100% !important;
 }
 
 .navbar-brand {
@@ -60,18 +64,18 @@ body {
     transition: 5s;
 }
 .text-title {
-    font-size: 72px;
-
-    font-weight: medium;
-    font-family: "Urbanist";
-    margin-top: 30px;
+    font-family: Urbanist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 .text-description {
     color: #565656;
     margin-top: 30px;
     /* Desktop Styles/Sub-Tittle */
     font-family: Urbanist;
-    font-size: 26px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: 150%;
@@ -79,14 +83,14 @@ body {
 .text-body {
     margin-top: 30px;
     font-family: Urbanist;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 50px;
     margin-bottom: 30px;
 }
 .btn {
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Urbanist";
 }
 
@@ -101,7 +105,7 @@ body {
 .text-feature {
     font-family: "Urbanist";
     margin-top: -10px;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 50px;
@@ -225,4 +229,467 @@ footer ul li {
 .custom-navbar.scrolled {
     background-color: white; /* Change to white after scrolling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Tablet */
+@media screen and (min-width: 608px) {
+    /* body {
+        padding: 0 150px 0 150px;
+    } */
+
+    .navbar-brand {
+        color: #252525;
+
+        font-family: Urbanist;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .nav-text {
+        color: #000;
+
+        font-family: Urbanist;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .nav-button {
+        font-family: Urbanist;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 20px 10px 20px;
+    }
+    #features {
+        margin-top: 70px;
+        margin-bottom: 120px;
+    }
+    .two-rows {
+        margin-bottom: 157px;
+    }
+
+    .chips {
+        width: fit-content;
+        padding: 15px 20px 15px 20px;
+        border-radius: 100px;
+        border: 1px solid #b6fb44;
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .chips:hover {
+        width: fit-content;
+        padding: 15px 20px 15px 20px;
+        border-radius: 100px;
+        background: #b6fb44;
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+        transition: 5s;
+    }
+    .text-title {
+        font-size: 72px;
+
+        font-weight: medium;
+        font-family: "Urbanist";
+        margin-top: 30px;
+    }
+    .text-description {
+        color: #565656;
+        margin-top: 30px;
+        /* Desktop Styles/Sub-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    .text-body {
+        margin-top: 30px;
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+    .btn {
+        font-size: 22px;
+        font-family: "Urbanist";
+    }
+
+    .list-features {
+        margin-top: 15px;
+    }
+    .img-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .text-feature {
+        font-family: "Urbanist";
+        margin-top: -10px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .card {
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .card-title {
+        color: #000;
+
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+        margin-top: 40px;
+    }
+    .img-card {
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+    }
+    .card-avatar {
+        margin-top: 60px;
+    }
+    footer {
+        margin-top: 60px;
+    }
+    .footer h3 {
+        color: #000;
+
+        /* Desktop Styles/Heading 1 */
+        font-family: Urbanist;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    footer h6 {
+        margin-top: 50px;
+        color: #000;
+
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    footer ul li {
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
+    .active-card {
+        border-radius: 20px;
+        border: 0.5px solid #5f5f5f;
+
+        background: #99c2ff1a;
+    }
+    .card-components:hover,
+    .card-testimonial:hover {
+        background: #99c2ff1a;
+    }
+    .active-card .card-title-feature {
+        color: #472db8;
+
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .active-card .card-description-feature {
+        color: #080c01;
+
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .card-title-feature {
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .card-description-feature {
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .img-card-feature {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+    }
+    .custom-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1050;
+        background-color: transparent; /* Default: Transparent */
+        padding: 10px 0;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 50px;
+    }
+
+    .custom-navbar.scrolled {
+        background-color: white; /* Change to white after scrolling */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1400px) {
+    body {
+        padding: 0 150px 0 150px;
+    }
+
+    .navbar-brand {
+        color: #252525;
+
+        font-family: Urbanist;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .nav-text {
+        color: #000;
+
+        font-family: Urbanist;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    .nav-button {
+        font-family: Urbanist;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding: 10px 20px 10px 20px;
+    }
+    #features {
+        margin-top: 70px;
+        margin-bottom: 120px;
+    }
+    .two-rows {
+        margin-bottom: 157px;
+    }
+    .chips {
+        width: fit-content;
+        padding: 15px 20px 15px 20px;
+        border-radius: 100px;
+        border: 1px solid #b6fb44;
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .chips:hover {
+        width: fit-content;
+        padding: 15px 20px 15px 20px;
+        border-radius: 100px;
+        background: #b6fb44;
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+        transition: 5s;
+    }
+    .text-title {
+        font-size: 72px;
+
+        font-weight: medium;
+        font-family: "Urbanist";
+        margin-top: 30px;
+    }
+    .text-description {
+        color: #565656;
+        margin-top: 30px;
+        /* Desktop Styles/Sub-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    .text-body {
+        margin-top: 30px;
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+        margin-bottom: 30px;
+    }
+    .btn {
+        font-size: 22px;
+        font-family: "Urbanist";
+    }
+
+    .list-features {
+        margin-top: 15px;
+    }
+    .img-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    .text-feature {
+        font-family: "Urbanist";
+        margin-top: -10px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .card {
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .card-title {
+        color: #000;
+
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+        margin-top: 40px;
+    }
+    .img-card {
+        width: 64px;
+        height: 64px;
+        border-radius: 64px;
+    }
+    .card-avatar {
+        margin-top: 60px;
+    }
+    footer {
+        margin-top: 60px;
+    }
+    .footer h3 {
+        color: #000;
+
+        /* Desktop Styles/Heading 1 */
+        font-family: Urbanist;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    footer h6 {
+        margin-top: 50px;
+        color: #000;
+
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    footer ul li {
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+
+    .active-card {
+        border-radius: 20px;
+        border: 0.5px solid #5f5f5f;
+
+        background: #99c2ff1a;
+    }
+    .card-components:hover,
+    .card-testimonial:hover {
+        background: #99c2ff1a;
+    }
+    .active-card .card-title-feature {
+        color: #472db8;
+
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .active-card .card-description-feature {
+        color: #080c01;
+
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .card-title-feature {
+        /* Desktop Styles/Menu-Tittle */
+        font-family: Urbanist;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .card-description-feature {
+        /* Desktop Styles/Body */
+        font-family: Urbanist;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px;
+    }
+    .img-card-feature {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+    }
+    .custom-navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1050;
+        background-color: transparent; /* Default: Transparent */
+        padding: 10px 0;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 50px;
+    }
+
+    .custom-navbar.scrolled {
+        background-color: white; /* Change to white after scrolling */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
 }

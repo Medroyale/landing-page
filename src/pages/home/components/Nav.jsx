@@ -39,7 +39,7 @@ const CustomNavbar = () => {
               Contact Us
             </Nav.Link>
           </Nav>
-          <Button variant="dark" size="sm" className="ms-3 nav-button">
+          <Button variant="dark" size="sm" className="nav-button">
             Downloads
           </Button>
         </Navbar.Collapse>
