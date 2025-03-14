@@ -8,7 +8,13 @@ import {
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/home/Home";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
+AOS.init({
+  duration: 400,
+  once: true,
+});
 const router = createBrowserRouter(
   createRoutesFromElements(<Route path="/" element={<Home />}></Route>),
 );
