@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 html,
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 body {
     padding: 0 20px 0 20px;
@@ -468,7 +468,7 @@ footer ul li {
 }
 
 /* Desktop */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
     body {
         padding: 0 150px 0 150px;
     }
