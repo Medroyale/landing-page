@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="contact">
       <Row>
         <Col lg={6}>
           <h3 className="text-footer-title">Medroyale</h3>

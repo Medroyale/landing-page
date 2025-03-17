@@ -41,7 +41,7 @@ const Home = () => {
           <a className=" btn-outline-secondary btn-out ">See our Features</a>
         </div>
         <div className="jumbot" data-aos="fade-up"></div>
-        <div className="d-flex justify-content-center" data-aos="fade-up">
+        <div className="d-flex justify-content-center">
           <img
             src={AppPreview}
             alt="Download App Medroyale"
@@ -122,20 +122,23 @@ const Home = () => {
             "Payslip distribution",
           ]}
         />
-        <h1 className="text-title text-center" data-aos="fade-right">
-          What people say about our platform
-        </h1>
-        <Row className="card-avatar">
-          <Col lg={4}>
-            <CardComponent img={Avatar} />
-          </Col>
-          <Col lg={4}>
-            <CardComponent img={Avatar1} />
-          </Col>
-          <Col lg={4}>
-            <CardComponent img={Avatar2} />
-          </Col>
-        </Row>
+        <section id="testimonials">
+          <h1 className="text-title text-center" data-aos="fade-right">
+            What people say about our platform
+          </h1>
+          <Row className="card-avatar">
+            <Col lg={4}>
+              <CardComponent img={Avatar} />
+            </Col>
+            <Col lg={4}>
+              <CardComponent img={Avatar1} />
+            </Col>
+            <Col lg={4}>
+              <CardComponent img={Avatar2} />
+            </Col>
+          </Row>
+        </section>
+
         <Row className="card-download mt-5">
           <Col lg={4}>
             <img src={AppPreview} className="img-fluid" />
