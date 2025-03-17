@@ -1,20 +1,59 @@
 /* Mobile */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 html,
 body {
     overflow-x: clip;
+    scroll-behavior: smooth;
 }
-body {
-    padding: 0 20px 0 20px;
-}
+
 .row {
     width: 100% !important;
+}
+.btn-fill {
+    background-color: #2839d6 !important;
+    color: #fff;
+    padding: 12px 24px 12px 24px;
+    border-radius: 48px;
+    font-size: 16px;
+    text-decoration: none;
+
+    font-family: "Inter" !important;
+}
+.btn-fill:hover {
+    background-color: #121e90 !important;
+    color: #fff;
+    padding: 12px 24px 12px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.5s;
+
+    font-family: "Inter" !important;
+}
+.btn-out {
+    margin-left: 8px;
+    padding: 0 !important;
+    font-size: 16px !important;
+    padding: 12px 24px 12px 24px !important;
+    text-decoration: none;
+    color: #fff;
+    border: 1px #dbdbdb solid;
+    font-family: "Inter" !important;
+    color: #0a0d14;
+
+    border-radius: 24px;
+}
+.btn-out:hover {
+    background-color: black !important;
+    color: white;
+    transition: 0.5s;
+    font-family: "Inter" !important;
 }
 
 .navbar-brand {
     color: #252525;
 
-    font-family: Urbanist;
+    font-family: "Hanken Grotesk", sans-serif;
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
@@ -23,14 +62,12 @@ body {
 .nav-text {
     color: #000;
 
-    font-family: Urbanist;
     font-size: 16px !important;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 .nav-button {
-    font-family: Urbanist;
     font-size: 16px !important;
     font-style: normal;
     font-weight: 600;
@@ -49,7 +86,7 @@ body {
     padding: 15px 20px 15px 20px;
     border-radius: 100px;
     border: 1px solid #b6fb44;
-    font-family: Urbanist;
+
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
@@ -60,7 +97,7 @@ body {
     padding: 15px 20px 15px 20px;
     border-radius: 100px;
     background: #b6fb44;
-    font-family: Urbanist;
+
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
@@ -68,7 +105,6 @@ body {
     transition: 5s;
 }
 .text-title {
-    font-family: Urbanist;
     font-size: 32px;
     font-style: normal;
     font-weight: 500;
@@ -78,15 +114,26 @@ body {
     color: #565656;
     margin-top: 30px;
     /* Desktop Styles/Sub-Tittle */
-    font-family: Urbanist;
+
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: 150%;
 }
+.text-jumbotron {
+    color: #565656;
+    margin-top: 30px;
+    /* Desktop Styles/Sub-Tittle */
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.5%;
+}
 .text-body {
     margin-top: 30px;
-    font-family: Urbanist;
+
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -97,7 +144,9 @@ body {
     font-size: 18px;
     font-family: "Urbanist";
 }
-
+.button-download {
+    margin-top: 42px;
+}
 .list-features {
     margin-top: 15px;
 }
@@ -122,7 +171,7 @@ body {
     color: #000;
 
     /* Desktop Styles/Body */
-    font-family: Urbanist;
+
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -144,7 +193,7 @@ footer {
     color: #000;
 
     /* Desktop Styles/Heading 1 */
-    font-family: Urbanist;
+
     font-size: 72px;
     font-style: normal;
     font-weight: 500;
@@ -155,14 +204,13 @@ footer h6 {
     color: #000;
 
     /* Desktop Styles/Menu-Tittle */
-    font-family: Urbanist;
+
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
     line-height: 35px;
 }
 footer ul li {
-    font-family: Urbanist;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -183,7 +231,7 @@ footer ul li {
     color: #472db8;
 
     /* Desktop Styles/Menu-Tittle */
-    font-family: Urbanist;
+
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
@@ -193,7 +241,7 @@ footer ul li {
     color: #080c01;
 
     /* Desktop Styles/Body */
-    font-family: Urbanist;
+
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -201,7 +249,7 @@ footer ul li {
 }
 .card-title-feature {
     /* Desktop Styles/Menu-Tittle */
-    font-family: Urbanist;
+
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
@@ -209,7 +257,7 @@ footer ul li {
 }
 .card-description-feature {
     /* Desktop Styles/Body */
-    font-family: Urbanist;
+
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -244,7 +292,6 @@ footer ul li {
     .navbar-brand {
         color: #252525;
 
-        font-family: Urbanist;
         font-size: 32px;
         font-style: normal;
         font-weight: 700;
@@ -253,14 +300,12 @@ footer ul li {
     .nav-text {
         color: #000;
 
-        font-family: Urbanist;
         font-size: 16px !important;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
     }
     .nav-button {
-        font-family: Urbanist;
         font-size: 16px !important;
         font-style: normal;
         font-weight: 600;
@@ -280,7 +325,7 @@ footer ul li {
         padding: 15px 20px 15px 20px;
         border-radius: 100px;
         border: 1px solid #b6fb44;
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 600;
@@ -291,7 +336,7 @@ footer ul li {
         padding: 15px 20px 15px 20px;
         border-radius: 100px;
         background: #b6fb44;
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 600;
@@ -309,7 +354,7 @@ footer ul li {
         color: #565656;
         margin-top: 30px;
         /* Desktop Styles/Sub-Tittle */
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 300;
@@ -317,7 +362,7 @@ footer ul li {
     }
     .text-body {
         margin-top: 30px;
-        font-family: Urbanist;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -353,7 +398,7 @@ footer ul li {
         color: #000;
 
         /* Desktop Styles/Body */
-        font-family: Urbanist;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -375,7 +420,7 @@ footer ul li {
         color: #000;
 
         /* Desktop Styles/Heading 1 */
-        font-family: Urbanist;
+
         font-size: 72px;
         font-style: normal;
         font-weight: 500;
@@ -386,14 +431,13 @@ footer ul li {
         color: #000;
 
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 600;
         line-height: 35px;
     }
     footer ul li {
-        font-family: Urbanist;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -403,8 +447,7 @@ footer ul li {
     .active-card {
         border-radius: 20px;
         border: 0.5px solid #5f5f5f;
-
-        background: #99c2ff1a;
+        background: white !important;
     }
     .card-components:hover,
     .card-testimonial:hover {
@@ -414,8 +457,8 @@ footer ul li {
         color: #472db8;
 
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
-        font-size: 26px;
+
+        font-size: 32px;
         font-style: normal;
         font-weight: 600;
         line-height: 35px;
@@ -424,7 +467,7 @@ footer ul li {
         color: #080c01;
 
         /* Desktop Styles/Body */
-        font-family: Urbanist;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -432,7 +475,7 @@ footer ul li {
     }
     .card-title-feature {
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 600;
@@ -440,7 +483,7 @@ footer ul li {
     }
     .card-description-feature {
         /* Desktop Styles/Body */
-        font-family: Urbanist;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -469,36 +512,33 @@ footer ul li {
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
-    body {
-        padding: 0 150px 0 150px;
+    #content {
+        padding: 0 240px 0 240px;
     }
-
+    .navbar {
+        padding-left: 240px !important;
+        padding-right: 240px !important;
+    }
     .navbar-brand {
         color: #252525;
 
-        font-family: Urbanist;
-        font-size: 32px;
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 24px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
     }
     .nav-text {
-        color: #000;
+        color: #0a0d14;
 
-        font-family: Urbanist;
+        font-family: "Inter";
         font-size: 16px !important;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 300;
+
         line-height: normal;
     }
-    .nav-button {
-        font-family: Urbanist;
-        font-size: 16px !important;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        padding: 10px 20px 10px 20px;
-    }
+
     #features {
         margin-top: 70px;
         margin-bottom: 120px;
@@ -506,50 +546,100 @@ footer ul li {
     .two-rows {
         margin-bottom: 157px;
     }
-    .chips {
+    .container-chips {
         width: fit-content;
-        padding: 15px 20px 15px 20px;
-        border-radius: 100px;
-        border: 1px solid #b6fb44;
-        font-family: Urbanist;
-        font-size: 26px;
+        padding: 12px 24px 12px 24px;
+        border-radius: 24px;
+        background: #0a0d14;
+        color: white;
+        letter-spacing: 0.5%;
+        font-size: 16px;
         font-style: normal;
         font-weight: 600;
-        line-height: 35px;
     }
-    .chips:hover {
+    .container-chips:hover {
         width: fit-content;
-        padding: 15px 20px 15px 20px;
-        border-radius: 100px;
-        background: #b6fb44;
-        font-family: Urbanist;
-        font-size: 26px;
+        padding: 12px 24px 12px 24px;
+        border-radius: 24px;
+        transition: 1s;
+
+        background: #001e65;
+
+        font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: 35px;
-        transition: 5s;
     }
     .text-title {
-        font-size: 72px;
-
-        font-weight: medium;
-        font-family: "Urbanist";
+        font-size: 84px;
+        letter-spacing: -2.5%;
+        font-weight: bold;
+        font-family: "Hanken Grotesk", sans-serif;
         margin-top: 30px;
     }
     .text-description {
-        color: #565656;
+        color: #5a5a5b;
         margin-top: 30px;
         /* Desktop Styles/Sub-Tittle */
-        font-family: Urbanist;
-        font-size: 26px;
+        font-family: "Inter";
+        font-size: 18px;
         font-style: normal;
         font-weight: 300;
         line-height: 150%;
     }
+    .text-two-rows-title {
+        font-size: 64px;
+        letter-spacing: -2.5%;
+        font-weight: bold;
+        font-family: "Hanken Grotesk", sans-serif;
+        margin-top: 30px;
+    }
+    .text-two-rows-description {
+        color: #5a5a5b;
+        margin-top: 30px;
+        /* Desktop Styles/Sub-Tittle */
+        font-family: "Inter";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    .jumbot {
+        margin-top: 200px;
+        width: 100%;
+        background-color: #0c182a;
+        height: 733px;
+        border-radius: 52px;
+    }
+    .card-download {
+        padding: 72px 84px 72px 84px;
+        width: 100%;
+        background-color: #0c182a;
+        border-radius: 52px;
+        color: white;
+    }
+    .card-download h1 {
+        margin-top: 106px;
+        font-family: "Hanken Grotesk";
+        font-size: 72px;
+    }
+    .card-download p {
+        font-family: "Inter";
+        font-size: 20px;
+        margin-bottom: 50px;
+        margin-top: 16px;
+    }
+    .card-download a {
+        margin-top: 20px !important;
+    }
+    .img-jumbot {
+        height: 1018px;
+        margin-top: -890px;
+    }
     .text-body {
         margin-top: 30px;
-        font-family: Urbanist;
-        font-size: 22px;
+
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         line-height: 50px;
@@ -569,9 +659,9 @@ footer ul li {
         margin-right: 10px;
     }
     .text-feature {
-        font-family: "Urbanist";
+        font-family: "Inter";
         margin-top: -10px;
-        font-size: 22px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 50px;
@@ -584,7 +674,7 @@ footer ul li {
         color: #000;
 
         /* Desktop Styles/Body */
-        font-family: Urbanist;
+
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -601,30 +691,28 @@ footer ul li {
     }
     footer {
         margin-top: 60px;
+        background: #0a0d14;
+        color: white;
+        padding: 48px 240px 98px 240px;
     }
-    .footer h3 {
-        color: #000;
-
+    footer h3 {
         /* Desktop Styles/Heading 1 */
-        font-family: Urbanist;
-        font-size: 72px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        font-family: "Hanken Grotesk";
+        font-size: 36px;
+        font-weight: bold;
     }
     footer h6 {
-        margin-top: 50px;
+        margin-top: 24px;
         color: #000;
 
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
-        font-size: 26px;
+        font-family: "Inter";
+        font-size: 16px;
         font-style: normal;
         font-weight: 600;
         line-height: 35px;
     }
     footer ul li {
-        font-family: Urbanist;
         font-size: 22px;
         font-style: normal;
         font-weight: 400;
@@ -642,40 +730,46 @@ footer ul li {
         background: #99c2ff1a;
     }
     .active-card .card-title-feature {
-        color: #472db8;
+        color: #0a0d14;
+        font-family: "Hanken Grotesk";
 
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
+
         font-size: 26px;
         font-style: normal;
         font-weight: 600;
         line-height: 35px;
     }
     .active-card .card-description-feature {
-        color: #080c01;
+        color: #0a0d14;
 
         /* Desktop Styles/Body */
-        font-family: Urbanist;
-        font-size: 22px;
+        font-family: "Hanken Grotesk" !important;
+
+        font-size: 16px !important;
         font-style: normal;
         font-weight: 400;
-        line-height: 50px;
+        line-height: 24px;
+
+        letter-spacing: -2.5%;
     }
     .card-title-feature {
         /* Desktop Styles/Menu-Tittle */
-        font-family: Urbanist;
-        font-size: 26px;
+
+        font-size: 32px;
+        font-family: "Hanken Grotesk";
         font-style: normal;
-        font-weight: 600;
+        font-weight: bold;
         line-height: 35px;
     }
     .card-description-feature {
         /* Desktop Styles/Body */
-        font-family: Urbanist;
-        font-size: 22px;
+        font-size: 16px;
+        font-family: "Hanken Grotesk";
         font-style: normal;
-        font-weight: 400;
-        line-height: 50px;
+        font-weight: 500px;
+        line-height: 24px;
+        letter-spacing: -2.5%;
     }
     .img-card-feature {
         width: 64px;
@@ -683,6 +777,7 @@ footer ul li {
         margin-bottom: 20px;
     }
     .custom-navbar {
+        margin: 0 !important;
         position: sticky;
         top: 0;
         z-index: 1050;
@@ -695,5 +790,55 @@ footer ul li {
     .custom-navbar.scrolled {
         background-color: white; /* Change to white after scrolling */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+    .text-features-title {
+        font-size: 64px;
+        letter-spacing: -2.5%;
+    }
+    .btn-fill-download {
+        background-color: white !important;
+        color: #0a0d14;
+        padding: 12px 24px 12px 24px;
+        border-radius: 48px;
+        font-size: 16px;
+        text-decoration: none;
+
+        font-family: "Inter" !important;
+    }
+    .btn-fill-download:hover {
+        background-color: #121e90 !important;
+        color: #fff;
+        padding: 12px 24px 12px 24px;
+        border-radius: 24px;
+        font-size: 16px;
+        text-decoration: none;
+        transition: 0.5s;
+
+        font-family: "Inter" !important;
+    }
+    .btn-out-download {
+        margin-left: 8px;
+        padding: 0 !important;
+        font-size: 16px !important;
+        padding: 12px 24px 12px 24px !important;
+        text-decoration: none;
+        color: #fff !important;
+        border: 1px #dbdbdb solid;
+        font-family: "Inter" !important;
+        color: #0a0d14;
+
+        border-radius: 24px;
+    }
+    .btn-out-download:hover {
+        background-color: black !important;
+        color: white;
+        transition: 0.5s;
+        font-family: "Inter" !important;
+    }
+    .icon-download {
+        margin-top: 24px;
+    }
+    .icon-download-apple {
+        margin-left: 12px;
     }
 }

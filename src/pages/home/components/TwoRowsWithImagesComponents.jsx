@@ -1,5 +1,5 @@
 import React from "react";
-import ChecklistIcon from "../../../assets/checklist_icon.png";
+import ChecklistIcon from "../../../assets/checklist_icon.svg";
 import { Button, Col, Row } from "react-bootstrap";
 
 const TwoRowsWithImagesRight = ({
@@ -25,15 +25,15 @@ const TwoRowsWithImagesRight = ({
       <Row>
         <Col lg={6}>
           {isShowChips && (
-            <h1 className="chips mt-3" data-aos="fade-left">
+            <h1 className="container-chips mt-3" data-aos="fade-left">
               {titleChips}
             </h1>
           )}
-          <h1 className="text-title mt-3" data-aos="fade-left">
+          <h1 className="text-two-rows-title mt-3" data-aos="fade-left">
             {title}
           </h1>
           {isDescription && (
-            <p className="text-description mt-3" data-aos="fade-left">
+            <p className="text-two-rows-description mt-3" data-aos="fade-left">
               {description}
             </p>
           )}

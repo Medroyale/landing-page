@@ -22,28 +22,23 @@ const CustomNavbar = () => {
       expand="lg"
       className={`custom-navbar ${scrolled ? "scrolled" : ""}`}
     >
-      <Container>
-        <Navbar.Brand href="#" className="navbar-brand">
-          Medroyale
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link href="#" className="nav-text">
-              Feature
-            </Nav.Link>
-            <Nav.Link href="#" className="nav-text">
-              Pricing
-            </Nav.Link>
-            <Nav.Link href="#" className="nav-text">
-              Contact Us
-            </Nav.Link>
-          </Nav>
-          <Button variant="dark" size="sm" className="nav-button">
-            Downloads
-          </Button>
-        </Navbar.Collapse>
-      </Container>
+      <Navbar.Brand href="#" className="navbar-brand">
+        MedRoyale
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto">
+          <Nav.Link href="#" className="nav-text">
+            Feature
+          </Nav.Link>
+          <Nav.Link href="#" className="nav-text">
+            Pricing
+          </Nav.Link>
+          <Nav.Link href="#" className="nav-text">
+            Contact Us
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 };
