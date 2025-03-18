@@ -17,12 +17,17 @@ import CardComponent from "./components/Card";
 import CardComponentFeature from "./components/CardComponentsFeature";
 
 import { Button, Col, Row } from "react-bootstrap";
-import Avatar from "../../assets/avatar.png";
-import Avatar1 from "../../assets/avatar1.png";
-import Avatar2 from "../../assets/avatar2.png";
+import Avatar from "../../assets/avatar1.svg";
+import Avatar2 from "../../assets/avatar2.svg";
+import Avatar3 from "../../assets/avatar3.svg";
+import Avatar4 from "../../assets/avatar4.svg";
+
 import CustomNavbar from "./components/Nav";
 import Footer from "./components/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+// Import Swiper styles
+import "swiper/css";
 const Home = () => {
   const download = "Downloads";
   return (
@@ -122,23 +127,56 @@ const Home = () => {
             "Payslip distribution",
           ]}
         />
-        <section id="testimonials">
-          <h1 className="text-title text-center" data-aos="fade-right">
-            What people say about our platform
-          </h1>
-          <Row className="card-avatar">
-            <Col lg={4}>
-              <CardComponent img={Avatar} />
-            </Col>
-            <Col lg={4}>
-              <CardComponent img={Avatar1} />
-            </Col>
-            <Col lg={4}>
-              <CardComponent img={Avatar2} />
-            </Col>
-          </Row>
-        </section>
-
+      </section>
+      <section id="testimonials">
+        <h1 className="text-title text-center" data-aos="fade-right">
+          What people say about our platform
+        </h1>
+        <Swiper
+          spaceBetween={30}
+          breakpoints={{
+            320: { slidesPerView: 1 }, // Mobile devices
+            640: { slidesPerView: 2 }, // Tablets
+            1024: { slidesPerView: 3 }, // Desktops
+          }}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <CardComponent
+              img={Avatar}
+              name="Riley Kimberly James"
+              username="@mrjames_riley"
+              commentar="Gamification in a medical setting is a game-changer—literally. This PvP arena challenges me to master real-life medical cases in a fun, competitive format that keeps me coming back for more."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardComponent
+              img={Avatar}
+              name="Jamie Lavender"
+              username="@jamel"
+              commentar="As a medical student, I found that learning complex concepts turned into an exciting adventure. The competitive PvP mode makes every lesson feel like an epic battle for knowledge"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardComponent
+              img={Avatar2}
+              name="Dr. Alex M."
+              username="@dr.alex.m"
+              commentar="This game revolutionized my approach to medicine. The adrenaline rush of PvP battles, combined with real-world medical challenges, has sharpened my diagnostic skills like never before."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <CardComponent
+              img={Avatar3}
+              name="Samuel Timothy"
+              username="@thisistimothy_"
+              commentar="The perfect blend of strategy and education! Competing against fellow players not only tests my medical acumen but also encourages me to think on my feet in high-pressure scenarios."
+            />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+      <section id="content">
         <Row className="card-download mt-5">
           <Col lg={4}>
             <img src={AppPreview} className="img-fluid" />

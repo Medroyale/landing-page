@@ -181,7 +181,7 @@ body {
 .img-card {
     width: 64px;
     height: 64px;
-    border-radius: 64px;
+    border-radius: 100%;
 }
 .card-avatar {
     margin-top: 60px;
@@ -850,5 +850,20 @@ footer ul li {
     }
     .icon-download-apple {
         margin-left: 12px;
+    }
+    .profile-user {
+        margin-left: 20px;
+    }
+    .profile-user h1 {
+        font-family: "Inter";
+        font-size: 18px;
+        letter-spacing: -2.5%;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .profile-user p {
+        font-family: "Inter";
+        font-size: 16px;
+        letter-spacing: -2.5%;
     }
 }

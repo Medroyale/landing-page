@@ -1,14 +1,17 @@
 import { Card } from "react-bootstrap";
 
-const CardComponent = ({ img, alt }) => {
+const CardComponent = ({ img, alt, commentar, name, username }) => {
   return (
     <>
       <Card data-aos="fade-left" className="card-testimonial mt-3">
-        <h1 className="card-title">
-          “I can’t say enough about Level. Thanks for the great service. We have
-          no regrets!”
-        </h1>
-        <img src={img} alt={alt} className="img-card" />
+        <div className="d-flex">
+          <img src={img} alt={alt} className="img-card" />
+          <div className="profile-user">
+            <h1>{name}</h1>
+            <p>@{username}</p>
+          </div>
+        </div>
+        <p>{commentar}</p>
       </Card>
     </>
   );
