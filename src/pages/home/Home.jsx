@@ -25,9 +25,11 @@ import Avatar4 from "../../assets/avatar4.svg";
 import CustomNavbar from "./components/Nav";
 import Footer from "./components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 const Home = () => {
   const download = "Downloads";
   return (
@@ -134,13 +136,20 @@ const Home = () => {
         </h1>
         <Swiper
           spaceBetween={30}
+          autoplay={{
+            delay: 2000,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             320: { slidesPerView: 1 }, // Mobile devices
             640: { slidesPerView: 2 }, // Tablets
             1024: { slidesPerView: 3 }, // Desktops
           }}
+          modules={[Autoplay]}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
+          loop
         >
           <SwiperSlide>
             <CardComponent
