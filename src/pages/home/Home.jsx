@@ -147,39 +147,37 @@ const Home = () => {
             1024: { slidesPerView: 3 }, // Desktops
           }}
           modules={[Autoplay]}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           loop
         >
           <SwiperSlide>
             <CardComponent
               img={Avatar}
               name="Riley Kimberly James"
-              username="@mrjames_riley"
+              username="mrjames_riley"
               commentar="Gamification in a medical setting is a game-changer—literally. This PvP arena challenges me to master real-life medical cases in a fun, competitive format that keeps me coming back for more."
             />
           </SwiperSlide>
           <SwiperSlide>
             <CardComponent
-              img={Avatar}
+              img={Avatar2}
               name="Jamie Lavender"
-              username="@jamel"
+              username="jamel"
               commentar="As a medical student, I found that learning complex concepts turned into an exciting adventure. The competitive PvP mode makes every lesson feel like an epic battle for knowledge"
             />
           </SwiperSlide>
           <SwiperSlide>
             <CardComponent
-              img={Avatar2}
+              img={Avatar3}
               name="Dr. Alex M."
-              username="@dr.alex.m"
+              username="dr.alex.m"
               commentar="This game revolutionized my approach to medicine. The adrenaline rush of PvP battles, combined with real-world medical challenges, has sharpened my diagnostic skills like never before."
             />
           </SwiperSlide>
           <SwiperSlide>
             <CardComponent
-              img={Avatar3}
+              img={Avatar4}
               name="Samuel Timothy"
-              username="@thisistimothy_"
+              username="thisistimothy_"
               commentar="The perfect blend of strategy and education! Competing against fellow players not only tests my medical acumen but also encourages me to think on my feet in high-pressure scenarios."
             />
           </SwiperSlide>

@@ -11,7 +11,7 @@ const CardComponent = ({ img, alt, commentar, name, username }) => {
             <p>@{username}</p>
           </div>
         </div>
-        <p>{commentar}</p>
+        <p className="commentar">{commentar}</p>c
       </Card>
     </>
   );

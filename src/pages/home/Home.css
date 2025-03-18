@@ -866,4 +866,11 @@ footer ul li {
         font-size: 16px;
         letter-spacing: -2.5%;
     }
+    .card-testimonial .commentar {
+        font-family: "Hanken Grotesk";
+        margin-top: 18px;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -2.5%;
+    }
 }
