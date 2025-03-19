@@ -137,10 +137,10 @@ const Home = () => {
         <Swiper
           spaceBetween={30}
           autoplay={{
-            delay: 2000,
             pauseOnMouseEnter: true,
             disableOnInteraction: false,
           }}
+          speed={1300}
           breakpoints={{
             320: { slidesPerView: 1 }, // Mobile devices
             640: { slidesPerView: 2 }, // Tablets
