@@ -25,7 +25,7 @@ const TwoRowsWithImagesRight = ({
       <Row>
         <Col lg={6}>
           {isShowChips && (
-            <h1 className="container-chips mt-3" data-aos="fade-left">
+            <h1 className="container-chips mt-5" data-aos="fade-left">
               {titleChips}
             </h1>
           )}
@@ -67,7 +67,7 @@ const TwoRowsWithImagesRight = ({
         </Col>
         <Col lg={6}>
           <img
-            className="img-fluid mt-5"
+            className="img-fluid img-two-rows mt-5"
             data-aos="fade-right"
             src={src}
             alt={alt}
