@@ -1641,7 +1641,7 @@ body {
         line-height: 150%;
     }
     .text-two-rows-title {
-        font-size: 64px;
+        font-size: 30px;
         letter-spacing: -2.5%;
         font-weight: bold;
         font-family: "Hanken Grotesk", sans-serif;
@@ -1809,7 +1809,7 @@ body {
     .card-title-feature {
         /* Desktop Styles/Menu-Tittle */
 
-        font-size: 32px;
+        font-size: 26px;
         font-family: "Hanken Grotesk";
         font-style: normal;
         font-weight: bold;
