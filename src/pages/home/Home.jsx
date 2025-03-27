@@ -201,10 +201,10 @@ const Home = () => {
             </a>
             <div className="d-flex icon-download">
               <a className="icon-download-android">
-                <img src={BrandAndroid} alt="aaa" />
+                <img src={BrandAndroid} alt="Download medroyale android" />
               </a>
               <a className="icon-download-apple">
-                <img src={BrandApple} alt="aaa" />
+                <img src={BrandApple} alt="Download medroyale apple" />
               </a>
             </div>
           </Col>
