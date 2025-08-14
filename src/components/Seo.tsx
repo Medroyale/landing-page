@@ -6,9 +6,9 @@ type SeoProps = {
 }
 
 export default function Seo({
-  title = "MedRoyale",
-  description = "MedRoyale marketing site.",
-  canonical = "https://medroyale.co.uk/",
+  title = "MedRoyale | The first competitive 1v1 quiz game designed for the UKMLA",
+  description = "MedRoyale The first competitive 1v1 quiz game designed for the UKMLA.",
+  canonical = "https://medroyale.co.uk",
   ogImage = "https://medroyale.co.uk/og-image.png",
 }: SeoProps) {
   return (
