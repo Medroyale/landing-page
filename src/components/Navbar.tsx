@@ -1,53 +1,12 @@
 import * as React from "react"
-import { Link } from "react-router-dom";
 
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
-    NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "./ui/button";
-
-const navItems: { title: string; href: string; description: string }[] = [
-    {
-        title: "Home",
-        href: "/",
-        description:
-            "The home page of the website.",
-    },
-    {
-        title: "About",
-        href: "/about",
-        description:
-            "About the website.",
-    },
-    {
-        title: "Contact",
-        href: "/contact",
-        description:
-            "Contact the website.",
-    },
-    {
-        title: "Privacy Policy",
-        href: "/privacy-policy",
-        description: "The privacy policy of the website.",
-    },
-    {
-        title: "Terms of Service",
-        href: "/terms-of-service",
-        description:
-            "The terms of service of the website.",
-    },
-    {
-        title: "Blog",
-        href: "/blog",
-        description:
-            "The blog of the website.",
-    },
-]
 
 export default function Navbar() {
     const [pastHero, setPastHero] = React.useState(false)
@@ -91,25 +50,5 @@ export default function Navbar() {
                 <Button className={`rounded-lg ${pastHero ? "bg-[#2F52DF] text-white" : "bg-[#252525]/50 text-white"}`}>Signup for Public Testing</Button>
             </div>
         </div>
-    )
-}
-
-function ListItem({
-    title,
-    children,
-    href,
-    ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
-    return (
-        <li {...props}>
-            <NavigationMenuLink asChild>
-                <Link to={href}>
-                    <div className="text-sm leading-none font-medium">{title}</div>
-                    <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                        {children}
-                    </p>
-                </Link>
-            </NavigationMenuLink>
-        </li>
     )
 }
