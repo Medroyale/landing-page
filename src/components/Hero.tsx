@@ -23,19 +23,19 @@ export default function Hero() {
         show: { opacity: 1, y: 0, transition: { ease: [0.33, 1, 0.68, 1], duration: 0.6 } }
     } as const
     return (
-        <section id="hero" className="flex-1 flex flex-col md:flex-row px-6 md:px-9 bg-[#2F52DF] min-h-dvh pt-20">
+        <section id="hero" className="flex-1 flex flex-col lg:flex-row px-6 md:px-9 bg-[#2F52DF] min-h-dvh pt-20 overflow-hidden">
             <motion.div className="flex-1 self-stretch min-w-0 flex flex-col justify-center space-y-8 md:space-y-12" initial="hidden" animate="show" variants={container}>
                 <div className="space-y-8">
                     <div className="space-y-6">
-                        <motion.h1 className="text-5xl/13 text-white" variants={item}>The First Competitive 1v1 Quiz Game Designed for the UKMLA</motion.h1>
-                        <motion.p className="text-white" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic">Learn, compete, win.</span></motion.p>
+                        <motion.h1 className="text-4xl md:text-5xl/13 text-white text-center lg:text-left" variants={item}>The First Competitive 1v1 Quiz Game Designed for the UKMLA</motion.h1>
+                        <motion.p className="text-white text-center lg:text-left text-lg md:text-2xl" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic text-xl md:text-3xl">Learn, compete, win.</span></motion.p>
                     </div>
-                    <motion.div className="flex items-center gap-4" variants={item}>
+                    <motion.div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start" variants={item}>
                         <Button onClick={() => setOpen(true)} variant={"default"} className="bg-white text-[#2F52DF] text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6">Sign up for public testing <ArrowUpRightIcon /></Button>
                         <Button variant={"outline"} className="bg-transparent text-white text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6 border-[1.5px]">Find out more</Button>
                     </motion.div>
                 </div>
-                <motion.div className="flex gap-2 items-center" variants={item}>
+                <motion.div className="flex gap-2 items-center justify-center lg:justify-start" variants={item}>
                     <p onClick={scrollToFeatures} className="w-fit text-[#BEC5E2] hover:text-white cursor-pointer select-none">Scroll to explore </p>
                     <Button
                         variant="ghost"
@@ -55,7 +55,14 @@ export default function Hero() {
                     </Button>
                 </motion.div>
             </motion.div>
-            <div className="flex-1 self-stretch min-w-0 min-h-0 overflow-hidden">
+
+            <div className="hidden md:block lg:hidden w-full h-64 mt-6 mb-6">
+                <div className="h-full flex items-center justify-center">
+                    <CarouselStack />
+                </div>
+            </div>
+
+            <div className="hidden lg:block flex-1 self-stretch min-w-0 min-h-0 overflow-hidden">
                 <CarouselStack />
             </div>
             <SignupDialog open={open} onClose={() => setOpen(false)} />
@@ -98,11 +105,11 @@ function CarouselStack() {
                             position === "center"
                                 ? { x: 0, scale: 1, rotate: 0, zIndex: 30, opacity: 1, filter: "blur(0px)" }
                                 : position === "left"
-                                    ? { x: -140, scale: 0.9, rotate: -6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
-                                    : { x: 140, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
+                                    ? { x: -100, scale: 0.9, rotate: -6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
+                                    : { x: 100, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
                         }
                         transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                        className="absolute rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[240px] sm:w-[280px] md:w-[300px] lg:w-[340px]"
+                        className="absolute rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[180px] sm:w-[200px] md:w-[240px] lg:w-[340px]"
                         draggable={false}
                     />
                 )
