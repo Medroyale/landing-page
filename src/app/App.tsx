@@ -14,7 +14,7 @@ function App() {
     <div className="min-h-dvh flex flex-col scroll-smooth">
       <Navbar />
       <Hero />
-      <section id="features" className="lg:px-[96px] lg:py-12 space-y-[240px] flex flex-col items-center">
+      <section id="features" className="px-6 md:px-9 lg:px-[96px] py-8 md:py-12 lg:py-16 space-y-16 md:space-y-24 lg:space-y-[240px] flex flex-col items-center">
         <Features
           layout={"default"}
           imgSrc={screen1}

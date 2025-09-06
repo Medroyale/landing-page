@@ -29,7 +29,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="flex flex-col items-center text-center gap-6"
+                className="flex flex-col items-center text-center gap-2"
             >
                 <motion.div initial={{ opacity: 0, y: 8 }} animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }} transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}>
                     <Badge><GamepadIcon /> {textBadge}</Badge>
@@ -38,26 +38,30 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                     initial={{ opacity: 0, y: 12 }}
                     animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
                     transition={{ duration: 0.65, ease: "easeOut", delay: 0.1 }}
-                    className="font-medium text-[42px] leading-[115%] tracking-[0.0075em] max-w-3xl"
+                    className="font-medium text-2xl md:text-3xl lg:text-[42px] leading-[115%] tracking-[0.0075em] max-w-3xl"
                     style={{ fontFamily: 'Figtree, sans-serif' }}
                 >
                     {textHeading}
                 </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-                    transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
-                    className="text-lg text-muted-foreground max-w-2xl"
-                >
-                    {textDescription}
-                </motion.p>
+                {textDescription && (
+                    <motion.p
+                        initial={{ opacity: 0, y: 14 }}
+                        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+                        transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
+                        className="text-base md:text-lg text-muted-foreground max-w-2xl"
+                    >
+                        {textDescription}
+                    </motion.p>
+                )}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                    className="mt-4"
+                    className="mt-8 -mx-6 md:-mx-9 w-full"
                 >
-                    <img src={imageSrc} alt={textHeading} draggable="false" className="rounded-[16px] border-black/10 w-full md:w-[872px] h-[320px] object-contain bg-white" />
+                    <div className="rounded-[16px] border-black/10 w-full h-[240px] md:h-[320px] bg-blue-500 flex items-center justify-center text-white text-2xl font-bold">
+                        Test Image Placeholder
+                    </div>
                 </motion.div>
             </motion.section>
         )
@@ -72,12 +76,12 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
         >
             <Badge className="w-fit"><GamepadIcon /> {textBadge}</Badge>
             <h2
-                className="font-medium text-[48px] leading-[115%] tracking-[0.0075em]"
+                className="font-medium text-2xl md:text-3xl lg:text-[48px] leading-[115%] tracking-[0.0075em]"
                 style={{ fontFamily: 'Figtree, sans-serif' }}
             >
                 {textHeading}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-prose">
+            <p className="text-base md:text-lg text-muted-foreground max-w-prose">
                 {textDescription}
             </p>
             <Button className="w-fit border-black" variant={"outline"}>Find out more <ArrowUpRightIcon /></Button>
@@ -91,7 +95,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full flex justify-center"
         >
-            <img src={imageSrc} alt={textHeading} className="rounded-[16px] border border-black/10 w-full md:w-[640px] h-[320px] object-contain bg-white" />
+            <img src={imageSrc} alt={textHeading} className="rounded-[16px] border border-black/10 w-full md:w-[640px] h-[240px] md:h-[320px] object-contain bg-white" />
         </motion.div>
     )
 
@@ -101,7 +105,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="grid gap-10 md:gap-16 md:grid-cols-2 items-center"
+            className="grid gap-8 md:gap-12 lg:gap-16 grid-cols-1 md:grid-cols-2 items-center"
         >
             <div className={layout === "ltr" ? "md:order-2" : "md:order-1"}>{content}</div>
             <div className={layout === "ltr" ? "md:order-1" : "md:order-2"}>{media}</div>

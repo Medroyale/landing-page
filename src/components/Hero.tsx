@@ -28,11 +28,11 @@ export default function Hero() {
                 <div className="space-y-8">
                     <div className="space-y-6">
                         <motion.h1 className="text-4xl md:text-5xl/13 text-white text-center lg:text-left" variants={item}>The First Competitive 1v1 Quiz Game Designed for the UKMLA</motion.h1>
-                        <motion.p className="text-white text-center lg:text-left text-lg md:text-2xl" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic text-xl md:text-3xl">Learn, compete, win.</span></motion.p>
+                        <motion.p className="hidden md:block text-white text-center lg:text-left text-lg md:text-2xl" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic text-xl md:text-3xl">Learn, compete, win.</span></motion.p>
                     </div>
                     <motion.div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start" variants={item}>
                         <Button onClick={() => setOpen(true)} variant={"default"} className="bg-white text-[#2F52DF] text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6">Sign up for public testing <ArrowUpRightIcon /></Button>
-                        <Button variant={"outline"} className="bg-transparent text-white text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6 border-[1.5px]">Find out more</Button>
+                        <Button variant={"outline"} className="hidden md:block bg-transparent text-white text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6 border-[1.5px]">Find out more</Button>
                     </motion.div>
                 </div>
                 <motion.div className="flex gap-2 items-center justify-center lg:justify-start" variants={item}>
@@ -53,6 +53,14 @@ export default function Hero() {
                             <ChevronDownIcon className="size-4" />
                         </motion.span>
                     </Button>
+                </motion.div>
+
+                {/* Mobile Carousel - ONLY for mobile screens */}
+                <motion.div className="block md:hidden w-full h-64 mt-6 mb-6 relative" variants={item}>
+                    <div className="h-full flex items-center justify-center">
+                        <CarouselStack />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[#2F52DF] to-transparent pointer-events-none"></div>
                 </motion.div>
             </motion.div>
 
@@ -105,11 +113,11 @@ function CarouselStack() {
                             position === "center"
                                 ? { x: 0, scale: 1, rotate: 0, zIndex: 30, opacity: 1, filter: "blur(0px)" }
                                 : position === "left"
-                                    ? { x: -100, scale: 0.9, rotate: -6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
-                                    : { x: 100, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(1px)" }
+                                    ? { x: -100, scale: 0.9, rotate: -6, zIndex: 10, opacity: 0.9, filter: "blur(0.5px)" }
+                                    : { x: 100, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(0.5px)" }
                         }
                         transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                        className="absolute rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[180px] sm:w-[200px] md:w-[240px] lg:w-[340px]"
+                        className="absolute rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[140px] sm:w-[160px] md:w-[240px] lg:w-[340px]"
                         draggable={false}
                     />
                 )
