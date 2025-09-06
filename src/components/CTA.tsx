@@ -10,10 +10,10 @@ export default function CTA() {
             <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center gap-12">
                 <div className="flex-1 w-full">
                     <h2
-                        className="text-white font-semibold text-[42px] leading-[115%] tracking-[0.0025em]"
+                        className="text-white font-semibold text-2xl md:text-3xl lg:text-[42px] leading-[115%] tracking-[0.0025em]"
                         style={{ fontFamily: "Figtree, sans-serif" }}
                     >
-                        Our goal is to build a community.
+                        To build a community.
                         <br />To ignite competition.
                         <br />To make learning fun.
                     </h2>
@@ -21,15 +21,15 @@ export default function CTA() {
                         className="mt-6 text-white/90 text-[20px] leading-[28px] tracking-[0.0025em] max-w-2xl"
                         style={{ fontFamily: "Inter, system-ui, sans-serif" }}
                     >
-                        The journey starts here – and it starts with you.
+                        The journey starts here - and it starts with you.
                     </p>
-                    <div className="mt-8 flex w-full max-w-xl gap-3">
+                    <div className="mt-8 flex flex-col md:flex-row w-full max-w-xl gap-3">
                         <input
                             type="email"
                             placeholder="Email address"
-                            className="flex-1 text-[16px] rounded-full border border-white/70 bg-white/95 text-black placeholder-black/60 px-5 py-3 outline-none focus:ring-[3px] focus:ring-white/30"
+                            className="w-full md:flex-1 text-[16px] rounded-full border border-white/70 bg-white/95 text-black placeholder-black/60 px-5 py-3 outline-none focus:ring-[3px] focus:ring-white/30"
                         />
-                        <Button className="rounded-full bg-black text-white hover:bg-black/90 !h-auto py-3 px-6">
+                        <Button className="w-full md:w-auto rounded-full bg-black text-white hover:bg-black/90 !h-auto py-3 px-6">
                             Sign up
                         </Button>
                     </div>
@@ -54,7 +54,7 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-                className="absolute bottom-0 -left-6 rotate-[-6deg] z-10 rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
+                className="absolute bottom-0 -left-6 rotate-[-6deg] z-10 rounded-[12px] shadow-2xl select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
                 draggable={false}
             />
             <motion.img
@@ -64,7 +64,7 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.65, ease: "easeOut", delay: 0.12 }}
-                className="absolute bottom-0 z-20 rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[180px] sm:w-[210px] md:w-[240px] lg:w-[280px]"
+                className="absolute bottom-0 z-20 rounded-[12px] shadow-2xl select-none pointer-events-none w-[180px] sm:w-[210px] md:w-[240px] lg:w-[280px]"
                 draggable={false}
             />
             <motion.img
@@ -74,7 +74,7 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.19 }}
-                className="absolute bottom-0 -right-6 rotate-[6deg] z-10 rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
+                className="absolute bottom-0 -right-6 rotate-[6deg] z-10 rounded-[12px] shadow-2xl select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
                 draggable={false}
             />
         </div>

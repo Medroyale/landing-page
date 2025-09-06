@@ -32,14 +32,14 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mx-auto w-full max-w-5xl px-6 md:px-0"
+            className="mx-auto w-full max-w-5xl"
         >
             <motion.h2
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.65, ease: "easeOut" }}
-                className="font-medium text-[48px] leading-[115%] tracking-[0.0075em] text-center mb-10 md:mb-14"
+                className="font-medium text-3xl md:text-4xl lg:text-5xl leading-[115%] tracking-[0.0075em] text-center mb-10 md:mb-14"
                 style={{ fontFamily: "Figtree, sans-serif" }}
             >
                 Frequently asked questions

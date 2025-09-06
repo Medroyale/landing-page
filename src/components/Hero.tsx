@@ -117,7 +117,7 @@ function CarouselStack() {
                                     : { x: 100, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(0.5px)" }
                         }
                         transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                        className="absolute rounded-[28px] shadow-2xl border border-white/20 bg-black/50 select-none pointer-events-none w-[140px] sm:w-[160px] md:w-[240px] lg:w-[340px]"
+                        className="absolute rounded-[12px] shadow-2xl select-none pointer-events-none w-[140px] sm:w-[160px] md:w-[240px] lg:w-[340px]"
                         draggable={false}
                     />
                 )
