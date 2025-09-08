@@ -1,10 +1,25 @@
+import { motion } from "motion/react";
+
 export default function Footer() {
     return (
         <footer className="bg-black text-white py-12 lg:py-[72px] lg:px-[96px]">
             <div className="mx-auto w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                        <img src="/logo.ico" alt="MedRoyale Logo" className="h-10 w-10 rounded" />
+                        <motion.img 
+                            src="/logo.ico" 
+                            alt="MedRoyale Logo" 
+                            className="h-10 w-10 rounded cursor-pointer" 
+                            whileHover={{ 
+                                scale: 1.1, 
+                                rotate: 5,
+                                transition: { type: "spring", stiffness: 400, damping: 10 }
+                            }}
+                            whileTap={{ 
+                                scale: 0.95,
+                                transition: { type: "spring", stiffness: 400, damping: 10 }
+                            }}
+                        />
                         <span className="text-2xl font-semibold">MedRoyale</span>
                     </div>
                     <ul className="space-y-3 text-white/80">

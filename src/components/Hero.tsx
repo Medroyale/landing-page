@@ -1,10 +1,11 @@
-import { ArrowUpRightIcon, ChevronDownIcon, X } from "lucide-react";
+import { ArrowUpRightIcon, ChevronDownIcon } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import screen1 from "@/assets/screen-1.png";
 import screen2 from "@/assets/screen-2.png";
 import screen3 from "@/assets/screen-3.png";
 import { Button } from "./ui/button";
+import SignupDialog from "./SignupDialog";
 
 export default function Hero() {
     const scrollToFeatures = () => {
@@ -27,8 +28,8 @@ export default function Hero() {
             <motion.div className="flex-1 self-stretch min-w-0 flex flex-col justify-center space-y-8 md:space-y-12" initial="hidden" animate="show" variants={container}>
                 <div className="space-y-8">
                     <div className="space-y-6">
-                        <motion.h1 className="text-4xl md:text-5xl/13 text-white text-center lg:text-left" variants={item}>The First Competitive 1v1 Quiz Game Designed for the UKMLA</motion.h1>
-                        <motion.p className="hidden md:block text-white text-center lg:text-left text-lg md:text-2xl" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic text-xl md:text-3xl">Learn, compete, win.</span></motion.p>
+                        <motion.h1 className="text-4xl md:text-5xl/13 text-white text-center lg:text-left" variants={item}>The first 1v1 quiz game designed for the UKMLA</motion.h1>
+                        <motion.p className="hidden md:block text-white text-center lg:text-left text-lg md:text-xl" variants={item}>Challenge friends or medical students around the globe. <br /><span className="font-semibold text-white italic text-xl md:text-xl">Learn, compete, win.</span></motion.p>
                     </div>
                     <motion.div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start" variants={item}>
                         <Button onClick={() => setOpen(true)} variant={"default"} className="bg-white text-[#2F52DF] text-base !h-auto !py-3 !px-4 has-[>svg]:!px-6">Sign up for public testing <ArrowUpRightIcon /></Button>
@@ -111,80 +112,51 @@ function CarouselStack() {
                         initial={false}
                         animate={
                             position === "center"
-                                ? { x: 0, scale: 1, rotate: 0, zIndex: 30, opacity: 1, filter: "blur(0px)" }
+                                ? { 
+                                    x: 0, 
+                                    scale: 1, 
+                                    rotate: 0, 
+                                    zIndex: 30, 
+                                    opacity: 1, 
+                                    filter: "blur(0px)",
+                                    y: [0, -8, 0]
+                                }
                                 : position === "left"
-                                    ? { x: -100, scale: 0.9, rotate: -6, zIndex: 10, opacity: 0.9, filter: "blur(0.5px)" }
-                                    : { x: 100, scale: 0.9, rotate: 6, zIndex: 10, opacity: 0.9, filter: "blur(0.5px)" }
+                                    ? { 
+                                        x: -100, 
+                                        scale: 0.9, 
+                                        rotate: -6, 
+                                        zIndex: 10, 
+                                        opacity: 0.9, 
+                                        filter: "blur(0.5px)",
+                                        y: [0, -4, 0]
+                                    }
+                                    : { 
+                                        x: 100, 
+                                        scale: 0.9, 
+                                        rotate: 6, 
+                                        zIndex: 10, 
+                                        opacity: 0.9, 
+                                        filter: "blur(0.5px)",
+                                        y: [0, -4, 0]
+                                    }
                         }
-                        transition={{ type: "spring", stiffness: 260, damping: 26 }}
-                        className="absolute rounded-[12px] shadow-2xl select-none pointer-events-none w-[140px] sm:w-[160px] md:w-[240px] lg:w-[340px]"
+                        transition={{ 
+                            type: "spring", 
+                            stiffness: 260, 
+                            damping: 26,
+                            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                        whileHover={{
+                            scale: position === "center" ? 1.05 : 0.95,
+                            y: position === "center" ? -15 : -8,
+                            transition: { type: "spring", stiffness: 300, damping: 20 }
+                        }}
+                        className="absolute rounded-[12px] shadow-[0_25px_70px_rgba(0,0,0,0.25)] select-none pointer-events-none w-[140px] sm:w-[160px] md:w-[240px] lg:w-[340px]"
                         draggable={false}
                     />
                 )
             })}
         </div>
-    )
-}
-
-function SignupDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
-    useEffect(() => {
-        if (!open) return
-        const handler = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose()
-        }
-        document.addEventListener('keydown', handler)
-        return () => document.removeEventListener('keydown', handler)
-    }, [open, onClose])
-
-    return (
-        <AnimatePresence>
-            {open && (
-                <>
-                    <motion.div
-                        className="fixed inset-0 z-50 bg-black/40"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                    />
-                    <motion.div
-                        role="dialog"
-                        aria-modal="true"
-                        className="fixed inset-0 z-50 grid place-items-center px-4"
-                        initial={{ opacity: 0, scale: 0.96, y: 10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.96, y: 10 }}
-                        transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1] }}
-                    >
-                        <div className="relative w-full max-w-lg rounded-2xl bg-white p-6 shadow-lg">
-                            <button
-                                aria-label="Close"
-                                onClick={onClose}
-                                className="absolute right-3 top-3 size-8 grid place-items-center rounded-md hover:bg-black/5"
-                            >
-                                <X className="size-5" />
-                            </button>
-                            <div className="mx-auto mb-3 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium">
-                                <span>◎ PUBLIC BETA</span>
-                            </div>
-                            <h3 className="text-xl md:text-2xl font-semibold text-center mb-2">Join the MedRoyale Public Testing</h3>
-                            <p className="text-center text-sm text-gray-600 mb-5">Be the first to try new features and help us improve for UKMLA students worldwide.</p>
-                            <form
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                    onClose();
-                                }}
-                                className="flex flex-col gap-3"
-                            >
-                                <input type="email" required placeholder="Email address" className="w-full rounded-md border px-4 py-3 text-base outline-none focus:ring-[3px] focus:ring-[#2F52DF]/30" />
-                                <Button type="submit" className="w-full bg-[#2F52DF] text-white hover:bg-[#2F52DF]/90">
-                                    Join the beta <ArrowUpRightIcon className="ml-2" />
-                                </Button>
-                            </form>
-                        </div>
-                    </motion.div>
-                </>
-            )}
-        </AnimatePresence>
     )
 }

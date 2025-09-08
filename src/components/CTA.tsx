@@ -54,7 +54,14 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-                className="absolute bottom-0 -left-6 rotate-[-6deg] z-10 rounded-[12px] shadow-2xl select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
+                whileHover={{
+                    rotateX: 10,
+                    rotateY: -10,
+                    scale: 1.05,
+                    y: -10,
+                    transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+                className="absolute bottom-0 -left-6 rotate-[-6deg] z-10 rounded-[12px] shadow-[0_25px_70px_rgba(0,0,0,0.25)] select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
                 draggable={false}
             />
             <motion.img
@@ -64,7 +71,14 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.65, ease: "easeOut", delay: 0.12 }}
-                className="absolute bottom-0 z-20 rounded-[12px] shadow-2xl select-none pointer-events-none w-[180px] sm:w-[210px] md:w-[240px] lg:w-[280px]"
+                whileHover={{
+                    rotateX: 5,
+                    rotateY: 5,
+                    scale: 1.08,
+                    y: -15,
+                    transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+                className="absolute bottom-0 z-20 rounded-[12px] shadow-[0_25px_70px_rgba(0,0,0,0.25)] select-none pointer-events-none w-[180px] sm:w-[210px] md:w-[240px] lg:w-[280px]"
                 draggable={false}
             />
             <motion.img
@@ -74,7 +88,14 @@ function PhonesStatic() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.19 }}
-                className="absolute bottom-0 -right-6 rotate-[6deg] z-10 rounded-[12px] shadow-2xl select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
+                whileHover={{
+                    rotateX: 10,
+                    rotateY: 10,
+                    scale: 1.05,
+                    y: -10,
+                    transition: { type: "spring", stiffness: 300, damping: 20 }
+                }}
+                className="absolute bottom-0 -right-6 rotate-[6deg] z-10 rounded-[12px] shadow-[0_25px_70px_rgba(0,0,0,0.25)] select-none pointer-events-none w-[160px] sm:w-[190px] md:w-[220px] lg:w-[250px]"
                 draggable={false}
             />
         </div>

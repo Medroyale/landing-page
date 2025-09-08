@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Menu, X } from "lucide-react"
+import { motion } from "motion/react"
 
 import {
     NavigationMenu,
@@ -8,10 +9,12 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "./ui/button";
+import SignupDialog from "./SignupDialog";
 
 export default function Navbar() {
     const [pastHero, setPastHero] = React.useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+    const [signupDialogOpen, setSignupDialogOpen] = React.useState(false)
     const hamburgerRef = React.useRef<HTMLButtonElement>(null)
 
     React.useEffect(() => {
@@ -61,7 +64,26 @@ export default function Navbar() {
     return (
         <div className={`mobile-menu-container fixed top-0 inset-x-0 z-50 h-20 flex items-center justify-between px-6 lg:px-9 transition-colors duration-300 ${pastHero ? "bg-white text-black" : "bg-[#2F52DF]/95 text-white supports-[backdrop-filter]:bg-[#2F52DF]/80 backdrop-blur"}`}>
             <div className="flex items-center space-x-2">
-                <img src="/logo.ico" alt="MedRoyale Logo" draggable="false" className="h-10 w-10 md:h-14 md:w-14 rounded-lg cursor-pointer" onClick={() => scrollToId('#hero')} />
+                <motion.img 
+                    src="/logo.ico" 
+                    alt="MedRoyale Logo" 
+                    draggable="false" 
+                    className="h-10 w-10 md:h-14 md:w-14 rounded-lg cursor-pointer" 
+                    onClick={() => scrollToId('#hero')}
+                    whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 5,
+                        transition: { type: "spring", stiffness: 400, damping: 10 }
+                    }}
+                    whileTap={{ 
+                        scale: 0.95,
+                        transition: { type: "spring", stiffness: 400, damping: 10 }
+                    }}
+                    animate={{
+                        y: [0, -2, 0],
+                        transition: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                />
             </div>
             <div className="hidden md:flex items-center space-x-2">
                 <NavigationMenu viewport={false}>
@@ -77,7 +99,7 @@ export default function Navbar() {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-                <Button className={`rounded-lg ${pastHero ? "bg-[#2F52DF] text-white" : "bg-[#252525]/50 text-white"}`}>Signup for Public Testing</Button>
+                <Button onClick={() => setSignupDialogOpen(true)} className={`rounded-lg ${pastHero ? "bg-[#2F52DF] text-white" : "bg-[#252525]/50 text-white"}`}>Signup for Public Testing</Button>
             </div>
 
             <button
@@ -114,12 +136,13 @@ export default function Navbar() {
                         Contact
                     </button>
                     <div className="pt-2 border-t border-gray-200">
-                        <Button className="w-full bg-[#2F52DF] text-white rounded-lg">
+                        <Button onClick={() => setSignupDialogOpen(true)} className="w-full bg-[#2F52DF] text-white rounded-lg">
                             Signup for Public Testing
                         </Button>
                     </div>
                 </div>
             </div>
+            <SignupDialog open={signupDialogOpen} onClose={() => setSignupDialogOpen(false)} />
         </div>
     )
 }
