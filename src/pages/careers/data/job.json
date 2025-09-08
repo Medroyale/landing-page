@@ -1,0 +1,29 @@
+[
+  {
+    "id": "se-001",
+    "title": "Software Engineer",
+    "division": "Engineering",
+    "location": "Remote",
+    "jobType": "remote",
+    "employment": "Permanent",
+    "descriptionMd": "## About the role\n- Build features across the stack.\n- Collaborate with product and design.\n\n## Requirements\n- 2+ years experience.\n- React, TypeScript, Node.js."
+  },
+  {
+    "id": "pm-001",
+    "title": "Product Manager",
+    "division": "Product",
+    "location": "Jakarta, Indonesia",
+    "jobType": "hybrid",
+    "employment": "Permanent",
+    "descriptionMd": "Lead discovery and delivery. Write specs, prioritize roadmap, and coordinate cross‑functionally."
+  },
+  {
+    "id": "fe-int-001",
+    "title": "Frontend Intern",
+    "division": "Engineering",
+    "location": "Jakarta, Indonesia",
+    "jobType": "on-site",
+    "employment": "Internship",
+    "descriptionMd": "Work with mentors on UI tasks. Learn Tailwind, React, and testing."
+  }
+]

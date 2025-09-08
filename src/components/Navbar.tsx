@@ -11,13 +11,18 @@ import {
 import { Button } from "./ui/button";
 import SignupDialog from "./SignupDialog";
 
-export default function Navbar() {
+type NavbarProps = {
+    variant?: "default" | "black"
+}
+
+export default function Navbar({ variant = "default" }: NavbarProps) {
     const [pastHero, setPastHero] = React.useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
     const [signupDialogOpen, setSignupDialogOpen] = React.useState(false)
     const hamburgerRef = React.useRef<HTMLButtonElement>(null)
 
     React.useEffect(() => {
+        if (variant === "black") return
         const hero = document.getElementById("hero")
         if (!hero) return
         const observer = new IntersectionObserver(
@@ -28,7 +33,7 @@ export default function Navbar() {
         )
         observer.observe(hero)
         return () => observer.disconnect()
-    }, [])
+    }, [variant])
 
     React.useEffect(() => {
         if (!mobileMenuOpen) return
@@ -61,8 +66,14 @@ export default function Navbar() {
         setMobileMenuOpen(false)
     }
 
+    const navbarColorClass = variant === "black"
+        ? "bg-black text-white"
+        : pastHero
+            ? "bg-white text-black"
+            : "bg-[#2F52DF]/95 text-white supports-[backdrop-filter]:bg-[#2F52DF]/80 backdrop-blur"
+
     return (
-        <div className={`mobile-menu-container fixed top-0 inset-x-0 z-50 h-20 flex items-center justify-between px-6 lg:px-9 transition-colors duration-300 ${pastHero ? "bg-white text-black" : "bg-[#2F52DF]/95 text-white supports-[backdrop-filter]:bg-[#2F52DF]/80 backdrop-blur"}`}>
+        <div className={`mobile-menu-container fixed top-0 inset-x-0 z-50 h-20 flex items-center justify-between px-6 lg:px-9 transition-colors duration-300 ${navbarColorClass}`}>
             <div className="flex items-center space-x-2">
                 <motion.img 
                     src="/logo.ico" 
@@ -99,7 +110,7 @@ export default function Navbar() {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
-                <Button onClick={() => setSignupDialogOpen(true)} className={`rounded-lg ${pastHero ? "bg-[#2F52DF] text-white" : "bg-[#252525]/50 text-white"}`}>Signup for Public Testing</Button>
+                <Button onClick={() => setSignupDialogOpen(true)} className={`rounded-lg ${variant === "black" ? "bg-white text-black" : pastHero ? "bg-[#2F52DF] text-white" : "bg-[#252525]/50 text-white"}`}>Signup for Public Testing</Button>
             </div>
 
             <button
@@ -136,7 +147,7 @@ export default function Navbar() {
                         Contact
                     </button>
                     <div className="pt-2 border-t border-gray-200">
-                        <Button onClick={() => setSignupDialogOpen(true)} className="w-full bg-[#2F52DF] text-white rounded-lg">
+                        <Button onClick={() => setSignupDialogOpen(true)} className={`w-full rounded-lg ${variant === "black" ? "bg-white text-black" : "bg-[#2F52DF] text-white"}`}>
                             Signup for Public Testing
                         </Button>
                     </div>
