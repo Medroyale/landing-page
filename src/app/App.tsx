@@ -5,6 +5,8 @@ import screen1 from "@/assets/turn_every_game_into_progress.png"
 import screen2 from "@/assets/spaced_repetition_made_simple.png"
 import featureImg from "@/assets/feature_image.png"
 import featureImg2 from "@/assets/feature_image_2.png"
+import SmartReview from "@/components/SmartReview"
+import TestSimulation from "@/components/TestSimulation"
 import FAQ from "@/components/FAQ"
 import CTA from "@/components/CTA"
 import Footer from "@/components/Footer"
@@ -34,6 +36,8 @@ function App() {
           badgeText="Review mode"
           heading="Spaced repetition made simple"
           description="Questions are handcrafted by a team of doctors, ranging from one to a decade of experience, highly detailed explanations, helping you to understand, not memorise" />
+        <SmartReview />
+        <TestSimulation />
         <Features
           layout={"default"}
           imgSrc={featureImg2}

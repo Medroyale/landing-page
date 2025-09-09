@@ -90,7 +90,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                     initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.98 }}
                     animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: shouldReduceMotion ? 1 : 0.98 }}
                     transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: "easeOut" as const, delay: shouldReduceMotion ? 0 : 0.2 }}
-                    className="mt-8 mb-8 md:-mx-9 w-full max-w-[874px] mx-auto"
+                    className="mt-8 mb-8 w-full px-4"
                 >
                     <motion.img
                         src={imgSrc}
