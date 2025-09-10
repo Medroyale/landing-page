@@ -1,8 +1,9 @@
 import { ArrowUpRightIcon, X } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
 import { Button } from "./ui/button";
+import { sendSignUpTesting } from "@/modules/email/email";
 
 interface SignupDialogProps {
     open: boolean;
@@ -10,6 +11,10 @@ interface SignupDialogProps {
 }
 
 export default function SignupDialog({ open, onClose }: SignupDialogProps) {
+    const [email, setEmail] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [serverMessage, setServerMessage] = useState<string>("")
+
     useEffect(() => {
         if (!open) return
         const handler = (e: KeyboardEvent) => {
@@ -57,21 +62,41 @@ export default function SignupDialog({ open, onClose }: SignupDialogProps) {
                             <h3 className="text-xl md:text-2xl font-semibold text-center mb-2 text-gray-900">Join the MedRoyale Public Testing</h3>
                             <p className="text-center text-sm text-gray-600 mb-5">Be the first to try new features and help us improve for UKMLA students worldwide.</p>
                             <form
-                                onSubmit={(e) => {
+                                onSubmit={async (e) => {
                                     e.preventDefault();
-                                    onClose();
+                                    if (isSubmitting) return
+                                    setIsSubmitting(true)
+                                    setServerMessage("")
+                                    try {
+                                        const res = await sendSignUpTesting({ email, message: "Public testing sign-up" })
+                                        // API returns 201 for new and 200 for duplicate, both are considered success
+                                        const msg: string = res?.message || "Successfully registered for public testing"
+                                        setServerMessage(msg)
+                                    } catch (err) {
+                                        setServerMessage("Something went wrong. Please try again.")
+                                    } finally {
+                                        setIsSubmitting(false)
+                                    }
                                 }}
                                 className="flex flex-col gap-3"
                             >
-                                <input 
-                                    type="email" 
-                                    required 
-                                    placeholder="Email address" 
-                                    className="w-full rounded-md border border-gray-300 px-4 py-3 text-base text-gray-900 placeholder-gray-500 outline-none focus:ring-[3px] focus:ring-[#2F52DF]/30 focus:border-[#2F52DF]" 
+                                <input
+                                    type="email"
+                                    required
+                                    placeholder="Email address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className="w-full rounded-md border border-gray-300 px-4 py-3 text-base text-gray-900 placeholder-gray-500 outline-none focus:ring-[3px] focus:ring-[#2F52DF]/30 focus:border-[#2F52DF]"
                                 />
-                                <Button type="submit" className="w-full bg-[#2F52DF] text-white hover:bg-[#2F52DF]/90">
-                                    Join the beta <ArrowUpRightIcon className="ml-2" />
+                                {serverMessage && (
+                                    <div className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">
+                                        {serverMessage}
+                                    </div>
+                                )}
+                                <Button type="submit" disabled={isSubmitting} className="w-full bg-[#2F52DF] text-white hover:bg-[#2F52DF]/90 disabled:opacity-60 disabled:cursor-not-allowed">
+                                    {isSubmitting ? "Submitting..." : (serverMessage ? "Submitted" : "Join the beta")} <ArrowUpRightIcon className="ml-2" />
                                 </Button>
+                                <p className="text-xs text-gray-500 text-center">We’ll only use your email for the public testing invitation.</p>
                             </form>
                         </div>
                     </motion.div>

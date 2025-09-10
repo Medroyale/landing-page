@@ -17,14 +17,14 @@ interface SmartReviewProps {
 export default function SmartReview({
     badgeText = "Review mode",
     heading = "Master knowledge with smart review",
-    description = "Forget cramming our adaptive review engine spaces your learning for maximum retention. Built on FSRS, a cutting-edge open-source algorithm.",
+    description = "Use the Review mode filter to control what topics are added. Our spaced repetition engine is built on FSRS – a cutting-edge, open-source algorithm designed to outperform traditional systems like Anki’s SM-2.",
     leftTitle = "Filter your reviews your way",
     leftDescription = "Choose exactly which topics you want to review. Stay focused by filtering subjects, categories, or specific questions.",
     rightTitle = "Review smarter, not harder",
     rightDescription = "Answer questions, reveal explanations, and let our algorithm schedule the perfect time for your next review."
 }: SmartReviewProps) {
     return (
-        <div className="relative w-full max-w-7xl mx-auto py-12">
+        <div className="relative w-full max-w-full mx-auto py-12">
             {/* Header Section */}
             <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium mb-6">
@@ -45,7 +45,7 @@ export default function SmartReview({
             <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-12 items-center justify-center">
                 {/* Left Text */}
                 <div className="lg:col-span-1 space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
                         {leftTitle}
                     </h3>
                     <p className="text-gray-600 text-lg leading-relaxed">
@@ -93,10 +93,10 @@ export default function SmartReview({
 
                 {/* Right Text */}
                 <div className="lg:col-span-1 space-y-6">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 text-end">
                         {rightTitle}
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed">
+                    <p className="text-gray-600 text-lg leading-relaxed text-end">
                         {rightDescription}
                     </p>
                 </div>
