@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Disallow common admin or duplicate paths (adjust when routes exist)
+# Disallow: /admin/
+# Disallow: /login
+# Disallow: /signup
+
 Sitemap: https://medroyale.co.uk/sitemap.xml

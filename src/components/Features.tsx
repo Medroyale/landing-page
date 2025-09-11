@@ -22,14 +22,12 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const shouldReduceMotion = useReducedMotion()
 
-    // Optimize useInView with better performance settings
     const inView = useInView(sectionRef, {
         once: true,
-        amount: 0.2, // Reduced from 0.3 for earlier trigger
-        margin: "0px 0px -5% 0px" // Reduced margin for better performance
+        amount: 0.2,
+        margin: "0px 0px -5% 0px"
     })
 
-    // Memoize animation variants to prevent recreation on every render
     const animationVariants = useMemo(() => ({
         initial: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
         animate: { opacity: 1, y: 0 },
@@ -41,7 +39,6 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
         animate: { opacity: 1, y: 0 },
         transition: { duration: shouldReduceMotion ? 0 : 0.55, ease: "easeOut" as const, delay: shouldReduceMotion ? 0 : 0.05 }
     }), [shouldReduceMotion])
-    // Memoize hover animations to prevent recreation
     const hoverAnimations = useMemo(() => shouldReduceMotion ? {} : {
         whileHover: {
             scale: 1.02,
@@ -90,12 +87,12 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                     initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.98 }}
                     animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: shouldReduceMotion ? 1 : 0.98 }}
                     transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: "easeOut" as const, delay: shouldReduceMotion ? 0 : 0.2 }}
-                    className="mt-8 mb-8 w-full px-4"
+                    className="mt-8 mb-8 w-full mx-auto px-0"
                 >
                     <motion.img
                         src={imgSrc}
                         alt="MedRoyale App Highlight"
-                        className="rounded-[16px] w-full h-[180px] sm:h-[220px] md:h-[260px] block cursor-pointer"
+                        className="rounded-[16px] w-full h-[220px] sm:h-[300px] md:h-[380px] block cursor-pointer"
                         style={{
                             objectFit: 'cover',
                             objectPosition: 'center center',
@@ -112,7 +109,6 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
         )
     }
 
-    // Memoize content and media animations
     const contentAnimations = useMemo(() => ({
         initial: { opacity: 0, x: shouldReduceMotion ? 0 : (layout === "ltr" ? 40 : -40) },
         animate: { opacity: 1, x: 0 },
@@ -140,7 +136,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             initial={contentAnimations.initial}
             animate={inView ? contentAnimations.animate : contentAnimations.initial}
             transition={contentAnimations.transition}
-            className={`flex flex-col gap-4 ${layout === "ltr" ? "items-end text-right" : ""}`}
+            className={`flex flex-col gap-4 items-center text-center ${layout === "ltr" ? "md:items-end md:text-right" : "md:items-start md:text-left"}`}
         >
             <Badge className="w-fit"><GamepadIcon /> {textBadge}</Badge>
             <h2
@@ -149,7 +145,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             >
                 {textHeading}
             </h2>
-            <p className={`text-base md:text-lg text-muted-foreground max-w-prose ${layout === "ltr" ? "text-right" : ""}`}>
+            <p className={`text-base md:text-lg text-muted-foreground max-w-prose ${layout === "ltr" ? "md:text-right" : "md:text-left"}`}>
                 {textDescription}
             </p>
             <Button className="w-fit border-black" variant={"outline"}>Find out more <ArrowUpRightIcon /></Button>
@@ -161,12 +157,20 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             initial={mediaAnimations.initial}
             animate={inView ? mediaAnimations.animate : mediaAnimations.initial}
             transition={mediaAnimations.transition}
-            className="w-full flex justify-center"
+            className="w-full flex justify-center px-0"
         >
             <motion.img
                 src={imgSrc}
                 alt={textHeading}
-                className="rounded-[16px] w-full md:w-[640px] h-[240px] md:h-[320px] object-contain bg-white cursor-pointer"
+                style={{
+                    objectFit: 'cover',
+                    objectPosition: 'center center',
+                    width: '100%',
+                    height: '100%',
+                    margin: 0,
+                    padding: 0
+                }}
+                className="rounded-[16px] w-full md:w-[720px] lg:w-[900px] h-[240px] md:h-[320px] lg:h-[380px] object-contain bg-white cursor-pointer mt-12 mb-8 mx-auto px-0"
                 loading="lazy"
                 {...mediaHoverAnimations}
             />
@@ -179,7 +183,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             initial={animationVariants.initial}
             animate={inView ? animationVariants.animate : animationVariants.initial}
             transition={animationVariants.transition}
-            className="grid gap-8 md:gap-12 lg:gap-16 grid-cols-1 md:grid-cols-2 items-center"
+            className="grid gap-8 md:gap-2 lg:gap-4 grid-cols-1 md:grid-cols-2 items-center"
         >
             <div className={layout === "ltr" ? "md:order-2" : "md:order-1"}>{content}</div>
             <div className={layout === "ltr" ? "md:order-1" : "md:order-2"}>{media}</div>

@@ -69,11 +69,11 @@ export default function Navbar({ variant = "default" }: NavbarProps) {
     const navbarColorClass = variant === "black"
         ? "bg-black text-white"
         : pastHero
-            ? "bg-white text-black"
+            ? "text-black bg-white/60 supports-[backdrop-filter]:bg-white/40 backdrop-blur border-b border-black/5"
             : "bg-[#2F52DF]/95 text-white supports-[backdrop-filter]:bg-[#2F52DF]/80 backdrop-blur"
 
     return (
-        <div className={`mobile-menu-container fixed top-0 inset-x-0 z-50 h-20 flex items-center justify-between px-6 lg:px-9 transition-colors duration-300 ${navbarColorClass}`}>
+        <div className={`mobile-menu-container fixed top-0 inset-x-0 z-50 h-20 flex items-center justify-between px-6 md:px-9 lg:px-[96px] transition-colors duration-300 ${navbarColorClass}`}>
             <div className="flex items-center space-x-2">
                 <motion.img 
                     src="/logo.ico" 

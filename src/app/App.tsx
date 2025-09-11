@@ -2,7 +2,6 @@ import Features from "@/components/Features"
 import Hero from "@/components/Hero"
 import Navbar from "@/components/Navbar"
 import screen1 from "@/assets/turn_every_game_into_progress.png"
-import screen2 from "@/assets/spaced_repetition_made_simple.png"
 import featureImg from "@/assets/feature_image.png"
 import featureImg2 from "@/assets/feature_image_2.png"
 import SmartReview from "@/components/SmartReview"
@@ -25,17 +24,11 @@ function App() {
           description=""
         />
         <Features
-          layout={"ltr"}
-          imgSrc={screen2}
-          badgeText="Question history"
-          heading="Turn Every Game Into Progress"
-          description="Every question is linked to a relevant flashcard, written by our team of doctors and aligned with our textbook. Get one wrong? Its flashcard is automatically added to Review mode." />
-        <Features
           layout={"rtl"}
           imgSrc={screen1}
-          badgeText="Review mode"
-          heading="Spaced repetition made simple"
-          description="Questions are handcrafted by a team of doctors, ranging from one to a decade of experience, highly detailed explanations, helping you to understand, not memorise" />
+          badgeText="Question history"
+          heading="Turn every game into progress"
+          description="Every question is linked to a relevant flashcard, written by our team of doctors and aligned with our textbook. Get one wrong? Its flashcard is automatically added to Review mode." />
         <SmartReview />
         <TestSimulation />
         <Features

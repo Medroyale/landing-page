@@ -24,7 +24,7 @@ export default function Hero() {
         show: { opacity: 1, y: 0, transition: { ease: [0.33, 1, 0.68, 1], duration: 0.6 } }
     } as const
     return (
-        <section id="hero" className="flex-1 flex flex-col lg:flex-row px-6 md:px-9 bg-[#2F52DF] min-h-dvh pt-20 overflow-hidden">
+        <section id="hero" className="flex-1 flex flex-col lg:flex-row px-6 md:px-9 lg:px-[96px] bg-[#2F52DF] min-h-dvh pt-20 overflow-hidden">
             <motion.div className="flex-1 self-stretch min-w-0 flex flex-col justify-center space-y-8 md:space-y-12" initial="hidden" animate="show" variants={container}>
                 <div className="space-y-8">
                     <div className="space-y-6">
@@ -112,38 +112,38 @@ function CarouselStack() {
                         initial={false}
                         animate={
                             position === "center"
-                                ? { 
-                                    x: 0, 
-                                    scale: 1, 
-                                    rotate: 0, 
-                                    zIndex: 30, 
-                                    opacity: 1, 
+                                ? {
+                                    x: 0,
+                                    scale: 1,
+                                    rotate: 0,
+                                    zIndex: 30,
+                                    opacity: 1,
                                     filter: "blur(0px)",
                                     y: [0, -8, 0]
                                 }
                                 : position === "left"
-                                    ? { 
-                                        x: -100, 
-                                        scale: 0.9, 
-                                        rotate: -6, 
-                                        zIndex: 10, 
-                                        opacity: 0.9, 
+                                    ? {
+                                        x: -100,
+                                        scale: 0.9,
+                                        rotate: -6,
+                                        zIndex: 10,
+                                        opacity: 0.9,
                                         filter: "blur(0.5px)",
                                         y: [0, -4, 0]
                                     }
-                                    : { 
-                                        x: 100, 
-                                        scale: 0.9, 
-                                        rotate: 6, 
-                                        zIndex: 10, 
-                                        opacity: 0.9, 
+                                    : {
+                                        x: 100,
+                                        scale: 0.9,
+                                        rotate: 6,
+                                        zIndex: 10,
+                                        opacity: 0.9,
                                         filter: "blur(0.5px)",
                                         y: [0, -4, 0]
                                     }
                         }
-                        transition={{ 
-                            type: "spring", 
-                            stiffness: 260, 
+                        transition={{
+                            type: "spring",
+                            stiffness: 260,
                             damping: 26,
                             y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                         }}

@@ -13,6 +13,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
     const [appState, setAppState] = useState<AppState>('empty')
     const [retentionValue, setRetentionValue] = useState(0.90)
     const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null)
+    const [selectedInterval, setSelectedInterval] = useState<string | null>(null)
     const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false)
 
     const question = "What are the typical chest X-ray findings in heart failure?"
@@ -29,7 +30,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
         { label: "Reset", time: "20m", color: "bg-gray-500 hover:bg-gray-600" },
         { label: "Hard", time: "15d", color: "bg-orange-500 hover:bg-orange-600" },
         { label: "Decent", time: "1month", color: "bg-green-500 hover:bg-green-600" },
-        { label: "Perfect", time: "2.2month", color: "bg-blue-500 hover:bg-blue-600" }
+        { label: "Perfect", time: "2.2months", color: "bg-blue-500 hover:bg-blue-600" }
     ]
 
 
@@ -50,6 +51,8 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
 
     const handleDifficultySelect = (difficulty: string) => {
         setSelectedDifficulty(difficulty)
+        const found = difficultyButtons.find((b) => b.label === difficulty)
+        setSelectedInterval(found ? found.time : null)
         setIsBottomSheetOpen(false)
         setTimeout(() => {
             setAppState('congratulations')
@@ -85,7 +88,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
 
             {/* Phone Simulation */}
             <div className="flex justify-center px-4">
-                <div className="relative w-full max-w-sm sm:max-w-md" style={{ aspectRatio: '394/830' }}>
+                <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-sm" style={{ aspectRatio: '394/830' }}>
                     {/* iPhone Frame */}
                     <img
                         src={iphoneFrame}
@@ -292,7 +295,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
                                                         animate={{ opacity: 1 }}
                                                         exit={{ opacity: 0 }}
                                                         onClick={() => setIsBottomSheetOpen(false)}
-                                                        className="absolute inset-0 z-10"
+                                                        className="absolute inset-0 z-0"
                                                         style={{ backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
                                                     />
 
@@ -310,7 +313,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
                                                                 setIsBottomSheetOpen(false)
                                                             }
                                                         }}
-                                                        className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 rounded-t-2xl shadow-lg max-h-[70vh] sm:max-h-[80vh] z-20"
+                                                        className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 rounded-t-2xl max-h-[70vh] sm:max-h-[80vh] z-0"
                                                     >
                                                         {/* Drag Handle */}
                                                         <div
@@ -385,7 +388,7 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
                                                 <div className="text-6xl mb-4">🎉</div>
                                                 <h2 className="text-2xl font-bold text-black">Congratulations!</h2>
                                                 <p className="text-gray-600 text-sm max-w-sm">
-                                                    You've been successfully try our spaced repetition. Ready to start?
+                                                    This flashcard will return for review in {selectedInterval ?? 'a moment'}. Ready to start?
                                                 </p>
                                                 <motion.button
                                                     onClick={() => {

@@ -1,7 +1,7 @@
 {
   "name": "landing-page",
   "private": true,
-  "version": "v0.0.2-alpha.1",
+  "version": "v0.0.10-alpha",
   "type": "module",
   "scripts": {
     "dev": "vite",
