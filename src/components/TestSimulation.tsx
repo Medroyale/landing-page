@@ -77,18 +77,19 @@ export default function TestSimulation({ className = "" }: TestSimulationProps) 
                     </svg>
                     Interactive Demo
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                    Try our spaced repetition system
+                <h2
+                    className="font-medium text-2xl md:text-3xl lg:text-[48px] leading-[115%] tracking-[0.0075em] whitespace-pre-line"
+                    style={{ fontFamily: 'Figtree, sans-serif' }}
+                >
+                    Try Review mode
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
-                    Experience how our adaptive review engine works. Answer questions and see how the algorithm
-                    schedules your next review based on your performance.
-                </p>
+                <p className={`text-base md:text-lg text-muted-foreground max-w-xl mx-auto mt-4`}>
+                    Ready to test it? Answer a flashcard now and watch our system schedule your next review.                </p>
             </div>
 
             {/* Phone Simulation */}
             <div className="flex justify-center px-4">
-                <div className="relative w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-sm" style={{ aspectRatio: '394/830' }}>
+                <div className="relative w-full max-w-[280px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-sm" style={{ aspectRatio: '394/830' }}>
                     {/* iPhone Frame */}
                     <img
                         src={iphoneFrame}

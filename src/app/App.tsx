@@ -19,7 +19,7 @@ function App() {
         <Features
           layout={"default"}
           imgSrc={featureImg}
-          badgeText="Unique PVP"
+          badgeText="1v1"
           heading={"Play against friends...\nOr anyone across the globe"}
           description=""
         />
@@ -35,8 +35,8 @@ function App() {
           layout={"default"}
           imgSrc={featureImg2}
           badgeText="Well Prepared"
-          heading="Organised, detailed textbooks"
-          description="Multiple trusted sources, Organised and accessible at the palm of your hand, Customisable, match your learning style, more pictures, more colour you name it" />
+          heading="Editable, mobile-first textbook"
+          description="Thoroughly cross-referenced and always up to date, our textbook is optimised for readability. Information overload? Use the in-app text editor to add tables, highlight, rearrange notes, and more." />
         <FAQ />
       </section>
       <section id="footer">

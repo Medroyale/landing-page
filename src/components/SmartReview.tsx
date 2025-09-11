@@ -20,8 +20,8 @@ interface SmartReviewProps {
 
 export default function SmartReview({
     badgeText = "Review mode",
-    rightTitle = "Review smarter, not harder",
-    rightDescription = "Answer questions, reveal explanations, and let our algorithm schedule the perfect time for your next review."
+    rightTitle = "Spaced repetition made simple",
+    rightDescription = "Use the Review mode filter to control what topics are added. Our spaced repetition engine is built on FSRS – a cutting-edge, open-source algorithm designed to outperform traditional systems like Anki’s SM-2."
 }: SmartReviewProps) {
     const contentAnimations = useMemo(() => ({
         initial: { opacity: 0, y: 24 },

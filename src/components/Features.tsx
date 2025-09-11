@@ -15,7 +15,7 @@ type FeaturesProps = {
 }
 
 export default function Features({ layout, imgSrc, badgeText, heading, description }: FeaturesProps) {
-    const textBadge = badgeText ?? "Unique PVP"
+    const textBadge = badgeText ?? "1v1"
     const textHeading = heading ?? "A New UKMLA Question Bank You Can Trust"
     const textDescription = description ??
         "Questions are handcrafted by a team of doctors, ranging from one to a decade of experience, highly detailed explanations, helping you to understand, not memorise."
@@ -55,7 +55,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                 initial={animationVariants.initial}
                 animate={inView ? animationVariants.animate : animationVariants.initial}
                 transition={animationVariants.transition}
-                className="flex flex-col items-center text-center"
+                className="flex flex-col items-center text-center mb-14"
             >
                 <motion.div
                     initial={staggerVariants.initial}
@@ -78,7 +78,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                         initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
                         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: shouldReduceMotion ? 0 : 14 }}
                         transition={{ duration: shouldReduceMotion ? 0 : 0.65, ease: "easeOut" as const, delay: shouldReduceMotion ? 0 : 0.15 }}
-                        className="text-base md:text-lg text-muted-foreground max-w-2xl"
+                        className="text-base md:text-lg text-muted-foreground max-w-2xl mt-4"
                     >
                         {textDescription}
                     </motion.p>

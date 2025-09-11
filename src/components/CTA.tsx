@@ -1,7 +1,49 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { useState } from "react";
+import axios from "axios";
+import { sendSignUpTesting } from "@/modules/email/email";
 
 export default function CTA() {
+    const [email, setEmail] = useState("")
+    const [submitting, setSubmitting] = useState(false)
+    const [submitted, setSubmitted] = useState<null | "success" | "error">(null)
+    const [errorMsg, setErrorMsg] = useState<string | null>(null)
+    const isValidEmail = (val: string) => /[^@\s]+@[^@\s]+\.[^@\s]+/.test(val)
+    const getFriendlyError = (err: unknown): string => {
+        if (axios.isAxiosError(err)) {
+            const status = err.response?.status
+            const apiMessage = (err.response?.data as any)?.message as string | undefined
+            if (status === 400) return apiMessage || "That email looks invalid. Please check and try again."
+            if (status === 409) return apiMessage || "This email is already registered for testing."
+            if (status === 429) return apiMessage || "Too many attempts. Please wait a moment and try again."
+            if (status && status >= 500) return "Our server is having a moment. Please try again shortly."
+            if (err.code === 'ERR_NETWORK') return "Network issue detected. Check your connection and try again."
+            return apiMessage || "Could not submit right now. Please try again."
+        }
+        return "Unexpected error occurred. Please try again."
+    }
+
+    const handleSubmit = async () => {
+        setSubmitted(null)
+        setErrorMsg(null)
+        if (!isValidEmail(email)) {
+            setSubmitted("error")
+            setErrorMsg("Please enter a valid email address.")
+            return
+        }
+        try {
+            setSubmitting(true)
+            await sendSignUpTesting({ email, message: "CTA signup" })
+            setSubmitted("success")
+            setEmail("")
+        } catch (e) {
+            setSubmitted("error")
+            setErrorMsg(getFriendlyError(e))
+        } finally {
+            setSubmitting(false)
+        }
+    }
     return (
         <section className="w-full bg-black px-6 md:px-9 lg:px-[96px] py-16 md:py-14 overflow-hidden">
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -28,11 +70,23 @@ export default function CTA() {
                             <Input
                                 type="email"
                                 placeholder="Email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit() }}
+                                disabled={submitting}
                                 className="w-full text-[16px] rounded-2xl border border-white/70 bg-white/95 text-black placeholder-black/60 px-5 py-4 outline-none focus:ring-[3px] focus:ring-white/30 h-full"
                             />
-                            <Button className="w-full sm:w-fit rounded-2xl bg-[#2F3DCB] text-white hover:bg-black/90 !h-auto py-4 px-6">
+                            <Button onClick={handleSubmit} disabled={submitting} className="w-full sm:w-fit rounded-2xl bg-[#2F3DCB] text-white hover:bg-black/90 disabled:opacity-60 disabled:cursor-not-allowed !h-auto py-4 px-6">
                                 Sign up
                             </Button>
+                        </div>
+                        <div aria-live="polite" className="min-h-[1.25rem]">
+                            {submitted === "success" && (
+                                <p className="text-green-400 text-sm">Thanks! We\'ll be in touch soon.</p>
+                            )}
+                            {submitted === "error" && errorMsg && (
+                                <p className="text-red-400 text-sm">{errorMsg}</p>
+                            )}
                         </div>
                     </div>
                 </div>
