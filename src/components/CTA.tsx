@@ -54,12 +54,12 @@ export default function CTA() {
                     >
                         Our goal is to <u>build a community</u>.
                         <br />To <u>ignite competition</u>.
-                        <br />To make <u>medical revision fun</u>.
+                        <br />To extinguish burnout.
 
                     </h2>
                 </div>
                 <div className="py-9">
-                    <div className="flex flex-col gap-4 items-center w-full text-center">
+                    <div className="flex flex-col gap-4 items-center w-full">
                         <p
                             className="text-white/90 text-[20px] leading-[28px] tracking-[0.0025em] w-full"
                             style={{ fontFamily: "Inter, system-ui, sans-serif" }}

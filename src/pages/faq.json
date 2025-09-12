@@ -1,0 +1,18 @@
+[
+    {
+        "title": "What is MedRoyale?",
+        "answer": "MedRoyale is the first real-time 1v1 quiz platform built specifically for medical students. Our goal is simple: to build a community, ignite competition, and make medical revision fun."
+    },
+    {
+        "title": "Is MedRoyale free?",
+        "answer": "Yes – our goal is to keep MedRoyale accessible to everyone. Whether you’re squeezing in a quick round between clinics, revising with a friend in the library, or just too tired to open your textbook, we want MedRoyale to be something you can always jump into. At launch, all users can play two games per day completely free – a total of 12 questions. We’re committed to keeping that core experience open to all students, so you can always say to a friend: “Wanna play a game of MedRoyale?”. No subscription needed. Premium options are available for unlimited games and extra features, but the main game stays free for everyone."
+    },
+    {
+        "title": "Why are you launching with only cardiology, respiratory, and gastroenterology?",
+        "answer": "Content for these core specialties has been developed over the past 12 months by our small team of UK doctors. Together, they’ve created over 1,700 questions – all UKMLA-focused, deeply researched, and aligned with the latest guidelines. As much as we’d love to launch with the entire UKMLA syllabus, we’re not willing to compromise on quality. We believe our content is among the most accurate and up to date available today, and we want students to benefit from it now. With the help of our community, we aim to grow our team by bringing in experienced doctors and high-performing graduates, allowing us to expand across the full UKMLA syllabus without ever lowering our standards."
+    },
+    {
+        "title": "What is included in MedRoyale premium package?",
+        "answer": "The MedRoyale Premium Package offers a comprehensive healthcare experience designed for convenience, personalization, and peace of mind. It includes unlimited telehealth consultations with certified doctors, priority scheduling for in-person appointments, access to a curated network of top specialists, and 24/7 medical concierge support. Members also enjoy personalized wellness plans, exclusive discounts on lab tests and prescriptions, and advanced digital health tracking all in one seamless subscription."
+    }
+]

@@ -55,7 +55,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
                 initial={animationVariants.initial}
                 animate={inView ? animationVariants.animate : animationVariants.initial}
                 transition={animationVariants.transition}
-                className="flex flex-col items-center text-center mb-14"
+                className="flex flex-col items-center text-center my-16"
             >
                 <motion.div
                     initial={staggerVariants.initial}
@@ -183,7 +183,7 @@ export default function Features({ layout, imgSrc, badgeText, heading, descripti
             initial={animationVariants.initial}
             animate={inView ? animationVariants.animate : animationVariants.initial}
             transition={animationVariants.transition}
-            className="grid gap-8 md:gap-2 lg:gap-4 grid-cols-1 md:grid-cols-2 items-center"
+            className="grid gap-8 md:gap-2 lg:gap-4 grid-cols-1 md:grid-cols-2 items-center my-16"
         >
             <div className={layout === "ltr" ? "md:order-2" : "md:order-1"}>{content}</div>
             <div className={layout === "ltr" ? "md:order-1" : "md:order-2"}>{media}</div>

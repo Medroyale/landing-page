@@ -30,7 +30,7 @@ export default function SmartReview({
     }), [])
 
     return (
-        <div className="relative w-full max-w-full mx-auto py-12">
+        <div className="relative w-full max-w-full mx-auto my-16">
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={contentAnimations.initial}
@@ -89,21 +89,6 @@ export default function SmartReview({
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="flex justify-center mt-12">
-                <Button
-                    variant={"outline"}
-                    className="w-fit"
-                    onClick={() => {
-                        const testSimulation = document.getElementById('test-simulation');
-                        if (testSimulation) {
-                            testSimulation.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }}
-                >
-                    Try our spaced repetition system
-                </Button>
             </div>
         </div>
     )
